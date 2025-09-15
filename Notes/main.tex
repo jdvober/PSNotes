@@ -1,0 +1,96 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper, portrait, margin=0.5in]{geometry}
+\usepackage[utf8]{inputenc}
+
+% Can cause issuses with \label
+\usepackage[
+backend=biber,
+style=apa,
+sorting=ynt
+]{biblatex}
+\addbibresource{../Resources/sources.bib}
+
+\usepackage{enumitem}
+\usepackage[dvipsnames, table, xcdraw]{xcolor} %allows colored text
+	\definecolor{dracbg}{RGB}{40,42,54}
+	\definecolor{dracfg}{RGB}{248,248,242}
+	\definecolor{dracCurrentLine}{RGB}{68,71,90}
+	\definecolor{dracComment}{RGB}{98,114,164}
+	\definecolor{dracCyan}{RGB}{139,233,253}
+	\definecolor{dracGreen}{RGB}{80,250,123}
+	\definecolor{dracOrange}{RGB}{255,184,108}
+	\definecolor{dracPink}{RGB}{255,121,198}
+	\definecolor{dracPurple}{RGB}{189,147,249}
+	\definecolor{dracRed}{RGB}{255,85,85}
+	\definecolor{dracYellow}{RGB}{241,250,140}
+
+\usepackage{multirow} % allows combining multiple rows in tables
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{csquotes} % For block quotations
+\usepackage{graphicx}
+	\graphicspath{ {../Resources/images/} }
+\usepackage[colorlinks=true, linkcolor=dracCyan, urlcolor=dracCyan, citecolor=dracfg]{hyperref}
+\usepackage{indentfirst} % indent the first line of a new paragraph automatically
+\usepackage{setspace}
+
+\usepackage{fancyhdr}% Fancy Headers and Footers
+\usepackage{lastpage}
+
+
+% figure support
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{titlesec}
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\Large\itshape} % format
+{Unit \thechapter} % label
+{0.5ex} % sep
+{
+    \rule{\textwidth}{1pt}
+    \vspace{1ex}
+    \centering
+} % before-code
+[
+\vspace{-0.5ex}%
+\rule{\textwidth}{0.3pt}
+] % after-code
+\usepackage{subfiles} % Best loaded last in the preamble
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{../figures/}{#2.pdf_tex}
+}
+\pdfsuppresswarningpagegroup=1
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% MetaData %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{}
+\author{Joseph Vober}
+\date{}
+
+\color{dracfg}%used before begin{document}, will cause all following text to be this color unless overridden
+\begin{document}
+\pagecolor{dracbg}
+% Main Body
+\maketitle
+
+\tableofcontents
+
+% \subfile{Unit1/Unit.tex}
+% \subfile{Unit2/Unit.tex}
+% \subfile{Unit3/Unit.tex}
+% \subfile{Unit4/Unit.tex}
+% \subfile{Unit5/Unit.tex}
+% \subfile{Unit6/Unit.tex}
+% \subfile{Unit7/Unit.tex}
+% \subfile{Unit8/Unit.tex}
+% \subfile{Unit9/Unit.tex}
+
+\printbibliography
+\end{document}
