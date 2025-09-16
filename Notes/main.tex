@@ -1,4 +1,4 @@
-\documentclass[twoside]{report}
+\documentclass{report}
 \usepackage[letterpaper,left=0.5in,marginpar=1in, textwidth=6in]{geometry}
 \usepackage[utf8]{inputenc}
 
@@ -24,6 +24,27 @@
 	\definecolor{dracRed}{RGB}{255,85,85}
 	\definecolor{dracYellow}{RGB}{241,250,140}
 
+
+\textwidth=\dimexpr\textwidth-1in\relax
+\usepackage{tikz,tabto,lipsum}
+\usetikzlibrary{shapes}
+
+\newcommand\margincloud[1]{{%
+  \tabto{\textwidth}%
+  \llap{%
+    \rule[-\dp\strutbox]{.5pt}{\dp\strutbox}%
+    \rule[-\dp\strutbox]{\dimexpr\textwidth-\TabPrevPos\relax}{.5pt}%
+    \kern-3pt
+    \smash{\rlap{\rotatebox[origin=lb]{45}{\rule[-\dp\strutbox]{60pt}{.5pt}}}}}%
+  \tabto*{\TabPrevPos}%
+  \marginpar{%
+    \smash{\begin{tikzpicture}
+    \node [cloud, fill=blue!5, draw,cloud puffs=10,cloud puff arc=120,
+       aspect=1.5, inner ysep=1em]{\parbox{1in}{\raggedright#1}};
+    \end{tikzpicture}%
+  }}%
+}}
+
 \usepackage{multirow} % allows combining multiple rows in tables
 \usepackage{multicol} % allows combining multiple rows in tables
 \usepackage{lipsum}
@@ -43,6 +64,8 @@
 
 \usepackage{outlines}
 
+\usepackage{amssymb}
+\usepackage{amsfonts}
 
 % figure support
 \usepackage{import}
