@@ -1,14 +1,14 @@
-\documentclass[12pt]{report}
-\usepackage[a4paper, portrait, margin=0.5in]{geometry}
+\documentclass[twoside]{report}
+\usepackage[letterpaper,left=0.5in,marginpar=1in, textwidth=6in]{geometry}
 \usepackage[utf8]{inputenc}
 
 % Can cause issuses with \label
-\usepackage[
-backend=biber,
-style=apa,
-sorting=ynt
-]{biblatex}
-\addbibresource{../Resources/sources.bib}
+% \usepackage[
+% backend=biber,
+% style=apa,
+% sorting=ynt
+% ]{biblatex}
+% \addbibresource{../Resources/sources.bib}
 
 \usepackage{enumitem}
 \usepackage[dvipsnames, table, xcdraw]{xcolor} %allows colored text
@@ -25,6 +25,9 @@ sorting=ynt
 	\definecolor{dracYellow}{RGB}{241,250,140}
 
 \usepackage{multirow} % allows combining multiple rows in tables
+\usepackage{multicol} % allows combining multiple rows in tables
+\usepackage{lipsum}
+\usepackage{marginnote}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[english]{babel}
@@ -37,6 +40,8 @@ sorting=ynt
 
 \usepackage{fancyhdr}% Fancy Headers and Footers
 \usepackage{lastpage}
+
+\usepackage{outlines}
 
 
 % figure support
@@ -70,19 +75,18 @@ sorting=ynt
 %%%%%%%%%% MetaData %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{}
-\author{Joseph Vober}
+\title{Physical Science Notes}
+\author{Mr. Vober}
 \date{}
 
-\color{dracfg}%used before begin{document}, will cause all following text to be this color unless overridden
 \begin{document}
-\pagecolor{dracbg}
 % Main Body
 \maketitle
 
 \tableofcontents
 
-% \subfile{Unit1/Unit.tex}
+ \subfile{Unit0-TakingExcellentNotes/Unit0-TakingExcellentNotes.tex}
+ \subfile{Unit1-Matter/Matter.tex}
 % \subfile{Unit2/Unit.tex}
 % \subfile{Unit3/Unit.tex}
 % \subfile{Unit4/Unit.tex}
@@ -92,5 +96,5 @@ sorting=ynt
 % \subfile{Unit8/Unit.tex}
 % \subfile{Unit9/Unit.tex}
 
-\printbibliography
+%\printbibliography
 \end{document}
