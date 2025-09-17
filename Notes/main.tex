@@ -2,166 +2,40 @@
 \usepackage[letterpaper,left=0.5in,marginpar=1in, textwidth=6.75in]{geometry}
 \usepackage[utf8]{inputenc}
 
-% Can cause issuses with \label
-% \usepackage[
-% backend=biber,
-% style=apa,
-% sorting=ynt
-% ]{biblatex}
-% \addbibresource{../Resources/sources.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{packages.tex}
 
-\usepackage{enumitem}
-\usepackage{appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography Package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{bib.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Colors
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{./colors.tex}
+\input{colors.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Boxes etc.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{./boxes.tex}
+\input{boxes.tex}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure Support
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{figures.tex}
 
-\usepackage{multirow} % allows combining multiple rows in tables
-\usepackage{multicol} % allows combining multiple col in tables, or having multiple columns on the page
-
-
-\usepackage{lipsum} %Lorem Ipsum
-
-\usepackage{marginnote} % For notes in the margin
-
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage[english]{babel}
-
-\usepackage{csquotes} % For block quotations
-\usepackage{graphicx}
-	\graphicspath{ {../Resources/images/} }
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=dracfg]{hyperref}
-\usepackage{indentfirst} % indent the first line of a new paragraph automatically
-\usepackage{setspace}
-
-\usepackage{fancyhdr}% Fancy Headers and Footers
-\usepackage{lastpage}
-
-\usepackage{outlines} % Outline environment
-
-% Fancy Math Symbols
-\usepackage{amssymb}
-\usepackage{amsfonts}
-
-\usepackage{lipsum}
-
-
-% Custom dashed line command alias
-%\newcommand{\aliasname}[1]{\originalcommand{#1}}
-%\newcommand{\dashedline}{\tcblower}
-
-% figure support
-\usepackage{import}
-\usepackage{pdfpages}
-\usepackage{transparent}
-\usepackage{titlesec}
-\titleformat
-{\chapter} % command
-[display] % shape
-{\bfseries\Large\itshape} % format
-{Unit \thechapter} % label
-{0.5ex} % sep
-{
-    \rule{\textwidth}{1pt}
-    \vspace{1ex}
-    \centering
-} % before-code
-[
-\vspace{-0.5ex}%
-\rule{\textwidth}{0.3pt}
-] % after-code
-
-
-% Chat Bubbles Effect https://tex.stackexchange.com/questions/405132/how-to-make-every-line-in-a-bubble-like-chat-conversations
-\usepackage{varwidth}
-\usepackage{environ}
-\usepackage{xparse}
-\newlength{\bubblesep}
-\newlength{\bubblewidth}
-\setlength{\bubblesep}{2pt}
-\AtBeginDocument{\setlength{\bubblewidth}{.75\textwidth}}
-\definecolor{bubblegreen}{RGB}{103,184,104}
-\definecolor{bubblegray}{RGB}{241,240,240}
-
-\newcommand{\bubble}[4]{%
-  \tcbox[
-    on line,
-    arc=4.5mm,
-    colback=#1,
-    colframe=#1,
-    #2,
-  ]{\color{#3}\begin{varwidth}{\bubblewidth}#4\end{varwidth}}%
-}
-
-\ExplSyntaxOn
-\seq_new:N \l__ooker_bubbles_seq
-\tl_new:N \l__ooker_bubbles_first_tl
-\tl_new:N \l__ooker_bubbles_last_tl
-
-\NewEnviron{rightbubbles}
- {
-  \begin{flushright}
-  \sffamily
-  \seq_set_split:NnV \l__ooker_bubbles_seq { \par } \BODY
-  \int_compare:nTF { \seq_count:N \l__ooker_bubbles_seq < 2 }
-   {
-    \bubble{bubblegreen}{rounded~corners}{white}{\BODY}\par
-   }
-   {
-    \seq_pop_left:NN \l__ooker_bubbles_seq \l__ooker_bubbles_first_tl
-    \seq_pop_right:NN \l__ooker_bubbles_seq \l__ooker_bubbles_last_tl
-    \bubble{bubblegreen}{sharp~corners=southeast}{white}{\l__ooker_bubbles_first_tl}
-    \par\nointerlineskip
-    \addvspace{\bubblesep}
-    \seq_map_inline:Nn \l__ooker_bubbles_seq
-     {
-      \bubble{bubblegreen}{sharp~corners=east}{white}{##1}
-      \par\nointerlineskip
-      \addvspace{\bubblesep}
-     }
-    \bubble{bubblegreen}{sharp~corners=northeast}{white}{\l__ooker_bubbles_last_tl}
-    \par
-   }
-   \end{flushright}
- }
-\NewEnviron{leftbubbles}
- {
-  \begin{flushleft}
-  \sffamily
-  \seq_set_split:NnV \l__ooker_bubbles_seq { \par } \BODY
-  \int_compare:nTF { \seq_count:N \l__ooker_bubbles_seq < 2 }
-   {
-    \bubble{bubblegray}{rounded~corners}{black}{\BODY}\par
-   }
-   {
-    \seq_pop_left:NN \l__ooker_bubbles_seq \l__ooker_bubbles_first_tl
-    \seq_pop_right:NN \l__ooker_bubbles_seq \l__ooker_bubbles_last_tl
-    \bubble{bubblegray}{sharp~corners=southwest}{black}{\l__ooker_bubbles_first_tl}
-    \par\nointerlineskip
-    \addvspace{\bubblesep}
-    \seq_map_inline:Nn \l__ooker_bubbles_seq
-     {
-      \bubble{bubblegray}{sharp~corners=west}{black}{##1}
-      \par\nointerlineskip
-      \addvspace{\bubblesep}
-     }
-    \bubble{bubblegray}{sharp~corners=northwest}{black}{\l__ooker_bubbles_last_tl}\par
-   }
-  \end{flushleft}
- }
-\ExplSyntaxOff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chat Bubbles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chatBubbles.tex}
 
 \usepackage{subfiles} % Best loaded last in the preamble
+
+% Figure support
 \newcommand{\incfig}[2][1]{%
     \def\svgwidth{#1\columnwidth}
     \import{../figures/}{#2.pdf_tex}
@@ -171,62 +45,41 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% MetaData %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\title{Physical Science Notes}
-\author{Mr. Vober}
-\date{}
-
 \begin{document}
-% Main Body
-\maketitle
 
+    \begin{titlepage}
+        \newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
+        \centering
+        \vspace*{1in} % Add some space from the top
+        \begin{Large}
+            \textbf{The Physical Science Tome of Infinite Wisdom}\\
+        \end{Large}
+        \vspace{1.5in} % Add more space
+        \begin{large}
+            \textbf{Mr. Vober}
+        \end{large}
+        \vfill % Push the following text to the bottom
+        Washington High School\\
+        \vspace{0.5in}
+    \end{titlepage}
+
+% Main Body
 \tableofcontents
 
 
 %%%%%%%%%%
-% Subfiles
+% Content
 %%%%%%%%%%
+\restoregeometry %sets the default margins that are not used on the title page, TOC etc.
+\subfile{./Content/Unit1-Matter/Matter.tex}
 
- \subfile{Unit1-Matter/Matter.tex}
-% \subfile{Unit2/Unit.tex}
-% \subfile{Unit3/Unit.tex}
-% \subfile{Unit4/Unit.tex}
-% \subfile{Unit5/Unit.tex}
-% \subfile{Unit6/Unit.tex}
-% \subfile{Unit7/Unit.tex}
-% \subfile{Unit8/Unit.tex}
-% \subfile{Unit9/Unit.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Redefine The Header stuff for the Appendix
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\titleformat
-{\chapter} % command
-[display] % shape
-{\bfseries\Large\itshape} % format
-{Appendix \thechapter} % label
-{0.5ex} % sep
-{
-    \rule{\textwidth}{1pt}
-    \vspace{1ex}
-    \centering
-} % before-code
-[
-\vspace{-0.5ex}%
-\rule{\textwidth}{0.3pt}
-] % after-code
-
-% Cleanup
-\renewcommand{\thechapter}{\Alph{chapter}}
-\setcounter{chapter}{0} % Set chapter counter to 0 (for 'A')
-
-%%%%%%%%%%%%%%%%%%%
-% Appendix Subfiles
-%%%%%%%%%%%%%%%%%%%
-
- \subfile{Appendix-TakingExcellentNotes/Appendix-TakingExcellentNotes.tex}
- \subfile{Appendix-CalculatingGrades/Appendix-CalculatingGrades.tex}
- \subfile{Appendix-MathInPhysicalScience/Appendix-MathInPhysicalScience.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./appendix.tex}
+\subfile{./Appendices/Appendix-TakingExcellentNotes/Appendix-TakingExcellentNotes.tex}
+\subfile{./Appendices/Appendix-CalculatingGrades/Appendix-CalculatingGrades.tex}
+\subfile{./Appendices/Appendix-MathInPhysicalScience/Appendix-MathInPhysicalScience.tex}
 
 %\printbibliography
 \end{document}
