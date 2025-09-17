@@ -12,99 +12,18 @@
 
 \usepackage{enumitem}
 \usepackage{appendix}
-\usepackage[dvipsnames, table, xcdraw]{xcolor} %allows colored text
-	\definecolor{dracbg}{RGB}{40,42,54}
-	\definecolor{dracfg}{RGB}{248,248,242}
-	\definecolor{dracCurrentLine}{RGB}{68,71,90}
-	\definecolor{dracComment}{RGB}{98,114,164}
-	\definecolor{dracCyan}{RGB}{139,233,253}
-	\definecolor{dracGreen}{RGB}{80,250,123}
-	\definecolor{dracOrange}{RGB}{255,184,108}
-	\definecolor{dracPink}{RGB}{255,121,198}
-	\definecolor{dracPurple}{RGB}{189,147,249}
-	\definecolor{dracRed}{RGB}{255,85,85}
-	\definecolor{dracYellow}{RGB}{241,250,140}
 
-% Custom commands to make text different colors
-\newcommand{\dracRed}[1]{\textcolor{dracRed}{#1}}
-\newcommand{\dracOrange}[1]{\textcolor{dracOrange}{#1}}
-\newcommand{\dracYellow}[1]{\textcolor{dracYellow}{#1}}
-\newcommand{\dracGreen}[1]{\textcolor{dracGreen}{#1}}
-\newcommand{\dracCyan}[1]{\textcolor{dracCyan}{#1}}
-\newcommand{\dracBlue}[1]{\textcolor{dracCyan}{#1}}
-\newcommand{\dracPurple}[1]{\textcolor{dracPurple}{#1}}
-\newcommand{\dracPink}[1]{\textcolor{dracPink}{#1}}
-\newcommand{\dracbg}[1]{\textcolor{dracbg}{#1}}
-\newcommand{\dracfg}[1]{\textcolor{dracfg}{#1}}
-\newcommand{\dracCurrentLine}[1]{\textcolor{dracCurrentLine}{#1}}
-\newcommand{\dracComment}[1]{\textcolor{dracComment}{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./colors.tex}
 
-% Custom Boxes
-% See https://www.overleaf.com/learn/latex/Environments#Defining_a_new_environment
-\usepackage[most]{tcolorbox} % Colorful boxes on the page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Boxes etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{boxred}[1]{%
-	\begin{tcolorbox}[enhanced, colback=red!25!black!10!white,colframe=red!75!black,title=#1,breakable]
-}{
-\end{tcolorbox}
-}
+\input{./boxes.tex}
 
-\newenvironment{boxgreen}[1]{%
-	\begin{tcolorbox}[enhanced, colback=green!25!black!10!white,colframe=green!75!black,title=#1,breakable]
-}{
-\end{tcolorbox}
-}
-
-\newenvironment{boxblue}[1]{%
-	\begin{tcolorbox}[enhanced, colback=blue!25!black!10!white,colframe=blue!75!black,title=#1,breakable]
-}{
-\end{tcolorbox}
-}
-
-\newenvironment{boxbluepointy}{
-\begin{tcolorbox}[enhanced,sharp corners=uphill,
-    colback=blue!50!white,colframe=blue!25!black,coltext=yellow,
-    fontupper=\Large\bfseries,arc=6mm,boxrule=2mm,boxsep=5mm,
-    borderline={0.3mm}{0.3mm}{white}, breakable]}
-{\end{tcolorbox}}
-
-\newenvironment{boxboxtitle}[1]{
-	\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
-  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
-  title=#1,fonttitle=\bfseries, breakable,
-  boxed title style={size=small,colframe=red!50!black} ]
-}{
-	\end{tcolorbox}
-}
-
-
-% sidebyside makes the "upper" and "lower" sections of the box "left" and "right" instead.  You still split the sections with \tcblower.  If sidebyside is not set, \tcblower splits upper and lower.
-\newenvironment{boxcompare}[1]{
-	\begin{tcolorbox}[enhanced, colback=blue!25!black!10!white,colframe=blue!75!black, listing side text,sidebyside,breakable, title=#1]
-}{
-	\end{tcolorbox}
-}
-
-
-% Fancy clouds for thought bubbles in the margins
-\textwidth=\dimexpr\textwidth-1in\relax
-\usepackage{tikz,tabto,lipsum}
-\usetikzlibrary{shapes}
-\newcommand\margincloud[1]{{%
-  \tabto{\textwidth}%
-  \llap{%
-    \rule[-\dp\strutbox]{.5pt}{\dp\strutbox}%
-    \rule[-\dp\strutbox]{\dimexpr\textwidth-\TabPrevPos\relax}{.5pt}%
-    \kern-3pt
-    \smash{\rlap{\rotatebox[origin=lb]{45}{\rule[-\dp\strutbox]{60pt}{.5pt}}}}}%
-  \tabto*{\TabPrevPos}%
-  \marginpar{%
-    \smash{\begin{tikzpicture}
-    \node [cloud, fill=blue!5, draw,cloud puffs=10,cloud puff arc=120,
-       aspect=1.5, inner ysep=1em]{\parbox{1in}{\raggedright#1}};
-    \end{tikzpicture}%
-  }}%
-}}
 
 \usepackage{multirow} % allows combining multiple rows in tables
 \usepackage{multicol} % allows combining multiple col in tables, or having multiple columns on the page
@@ -307,6 +226,7 @@
 
  \subfile{Appendix-TakingExcellentNotes/Appendix-TakingExcellentNotes.tex}
  \subfile{Appendix-CalculatingGrades/Appendix-CalculatingGrades.tex}
+ \subfile{Appendix-MathInPhysicalScience/Appendix-MathInPhysicalScience.tex}
 
 %\printbibliography
 \end{document}
