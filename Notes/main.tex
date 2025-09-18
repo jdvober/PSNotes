@@ -7,6 +7,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{packages.tex}
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography Package
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -47,23 +49,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-    \begin{titlepage}
-        \newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
-        \centering
-        \vspace*{1in} % Add some space from the top
-        \begin{Large}
-            \textbf{The Physical Science Tome of Infinite Wisdom}\\
-        \end{Large}
-        \vspace{1.5in} % Add more space
-        \begin{large}
-            \textbf{Mr. Vober}
-        \end{large}
-        \vfill % Push the following text to the bottom
-        Washington High School\\
-        \vspace{0.5in}
-    \end{titlepage}
+\begin{titlepage}
+    \newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
+    %\centering
+    \vspace*{1in} % Add some space from the top
+    \begin{Large}
+        \textbf{The Physical Science Tome of Infinite Wisdom}\\
+    \end{Large}
+    \vspace{1.5in} % Add more space
+    \begin{large}
+        \textbf{Mr. Vober}
+    \end{large}
+    \vfill % Push the following text to the bottom
+    Washington High School\\
+    \vspace{0.5in}
+\end{titlepage}
 
 % Main Body
+\newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
+%\centering
 \tableofcontents
 
 
@@ -71,6 +75,7 @@
 % Content
 %%%%%%%%%%
 \restoregeometry %sets the default margins that are not used on the title page, TOC etc.
+\raggedright % restores left alignment
 \subfile{./Content/Unit1-Matter/Matter.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,5 +86,4 @@
 \subfile{./Appendices/Appendix-CalculatingGrades/Appendix-CalculatingGrades.tex}
 \subfile{./Appendices/Appendix-MathInPhysicalScience/Appendix-MathInPhysicalScience.tex}
 
-%\printbibliography
 \end{document}
