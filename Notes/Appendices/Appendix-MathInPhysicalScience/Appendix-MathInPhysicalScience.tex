@@ -13,6 +13,54 @@ Generally, in this class, you should give your final answers in decimal form.  I
 	Answers should be rounded to two or three decimal places.
 \end{boxPink}
 
+\section{Scientific Notation}
+
+	\subsection{Why}
+
+		Scientific Notation is just a more convienent way to display really big and really small numbers.  For instance, instead of writing
+
+		\begin{quote}
+			{\huge 6,020,000,000,000,000,000,000,000}
+		\end{quote}
+
+		over and over in a problem, it is much more convienent to write
+
+		\begin{quote}
+			{\huge \num{6.02e23}}
+		\end{quote}
+
+	\subsection{How to read and write Scientific Notation}
+
+	\bigskip
+	\bigskip
+
+\begin{figure}[!ht]
+	\centering
+	\resizebox{1\textwidth}{!}{%
+	\begin{circuitikz}
+		\tikzstyle{every node}=[font=\LARGE]
+		%Words on top
+		\node [font=\LARGE] at (1,14.75) {Decimal};
+		\node [font=\LARGE] at (4,14.75) {Base};
+		\node [font=\LARGE] at (7,14.75) {Exponent};
+
+		%Text on bottom
+		\node [font=\LARGE] at (4,12) {$\num{6.02}~~\text{x}10^{~~23}$};
+
+		%Rectangles
+		\draw  (2.25,12.5) rectangle (3.65,11.5);
+		\draw  (3.775,12.5) rectangle (4.85,11.5);
+		\draw  (4.975,12.5) rectangle (5.65,11.75);
+
+		%Arrows
+		\draw [->, >=Stealth] (1,14.25) -- (2.75,12.75);
+		\draw [->, >=Stealth] (4.125,14.25) -- (4.25,12.75);
+		\draw [->, >=Stealth] (7,14.25) -- (5.5,12.75);
+	\end{circuitikz}
+	}%
+	\label{fig:my_label}
+\end{figure}
+
 \section{Units}
 
 \section{Examples of solving Math Problems in Physical Science}
@@ -25,7 +73,7 @@ Now that we have discussed what units are in Math and Science, let's look the ge
 
 When solving math-based problems in this class, you will \emph{generally} follow the following five steps:
 
-\begin{enumerate}
+ \begin{enumerate}
 	\item Write down the numbers that you are \textbf{GIVEN} (with units).
 	\item Write down the number you are asked to \textbf{FIND} (with units.)
 	      \begin{enumerate}
@@ -49,6 +97,13 @@ When solving math-based problems in this class, you will \emph{generally} follow
 
 		      \item Pick the correct "version" of the formula from the list provided by Mr. Vober.  Check the wall or your notes for the different "versions".
 	      \end{enumerate}
+	\item Plug in the \textbf{GIVENS} into the matching places in the formula you chose.
+	\item Solve the math problem
+	\item Record you final answer, with units.
+	\begin{enumerate}
+		\item The units for the answer will be the same as the same type of number in the \textbf{GIVENS}
+		\item Example: You are solving for a mass, and the \textbf{GIVEN} mass is measured in $kg$ $\rightarrow$ your answer will also be in $kg$
+	\end{enumerate}
 \end{enumerate}
 
 \end{document}

@@ -125,7 +125,7 @@
 
 % sidebyside makes the "upper" and "lower" sections of the box "left" and "right" instead.  You still split the sections with \tcblower.  If sidebyside is not set, \tcblower splits upper and lower.
 \newenvironment{boxcompare}[1]{
-	\begin{tcolorbox}[enhanced, colback=blue!25!black!10!white,colframe=blue!75!black, listing side text,sidebyside,breakable, title=#1]
+	\begin{tcolorbox}[enhanced, colback=blue!25!black!10!white,colframe=blue!75!black, listing side text,sidebyside=true,breakable, title=#1]
 }{
 	\end{tcolorbox}
 }
