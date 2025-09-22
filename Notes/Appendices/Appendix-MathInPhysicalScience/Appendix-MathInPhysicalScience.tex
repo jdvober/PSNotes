@@ -35,8 +35,6 @@ Generally, in this class, you should give your final answers in decimal form.  I
 	\bigskip
 
 \begin{figure}[!ht]
-	\centering
-	\resizebox{1\textwidth}{!}{%
 	\begin{circuitikz}
 		\tikzstyle{every node}=[font=\LARGE]
 		%Words on top
@@ -57,9 +55,29 @@ Generally, in this class, you should give your final answers in decimal form.  I
 		\draw [->, >=Stealth] (4.125,14.25) -- (4.25,12.75);
 		\draw [->, >=Stealth] (7,14.25) -- (5.5,12.75);
 	\end{circuitikz}
-	}%
 	\label{fig:my_label}
 \end{figure}
+
+
+The \emph{Decimal} portion of the number is just all of the numbers expressed so you have
+\begin{quote}
+	One digit \textbf{.} (All the other numbers)
+\end{quote}
+
+Examples:
+\bigskip
+1.157 \quad 2.23 \quad 1.050433404
+
+The \emph{Base} portion of the number is either \num{e25}\sisetup{output-exponent-marker=\ensuremath{\mathrm{E}}} or \num{e25}
+\dracComment{\marginnote{Calculators with one line displays often show exponents as \num{e25} instead of \sisetup{output-exponent-marker=} x\num{e25} }} to save space.  Either is fine by me.
+
+The exponent tells you how far you have to move the decimal place to get back to the "normal" way of writing numbers\dots
+
+If you have a positive exponent, it means you move the decimal to the right.  If you have a negative exponent, it means you move the decimal to the left.\\
+
+Negative exponents $\rightarrow$ numbers < 1.
+
+Positive exponents $\rightarrow$ big numbers at least > 1
 
 \section{Units}
 
@@ -67,17 +85,15 @@ Generally, in this class, you should give your final answers in decimal form.  I
 
 Now that we have discussed what units are in Math and Science, let's look the general steps you should be doing for all of the math problems in this class.  We will use an example problem from near the beginning of the year involving Gas Laws.
 
-\begin{boxGray}{Example 1}
-	A balloon is filled with air.  The pressure of the balloon is \orange{\(10~atm\)} to start.  This expands it to a starting volume of \blue{\(2~mL\)}.  The balloon is then squeezed to a new pressure of \orange{\(28~atm\)}.  What would be the \blue{new volume} of the balloon after it is squeezed?
-\end{boxGray}
 
+\subsection{General Steps}
 When solving math-based problems in this class, you will \emph{generally} follow the following five steps:
 
  \begin{enumerate}
 	\item Write down the numbers that you are \textbf{GIVEN} (with units).
 	\item Write down the number you are asked to \textbf{FIND} (with units.)
 	      \begin{enumerate}
-		      \item I usually write a \textbf{\purple{?}} instead of a number, because we are going to solve for this.  We don't know what it is yet!
+		      \item I usually write a {\huge\textbf{\purple{?}}} instead of a number, because we are going to solve for this.  We don't know what it is yet!
 	      \end{enumerate}
 	\item Narrow down your formulas until you have one that allows you to solve for the missing number.
 	      \begin{enumerate}
@@ -89,7 +105,7 @@ When solving math-based problems in this class, you will \emph{generally} follow
 			                  \end{enumerate}
 		            \end{enumerate}
 	      \end{enumerate}
-	\item Get the correct version of the formula you chose, so that it reads \[\textbf{\emph{FIND}} = ...\text{other stuff}\]
+	\item Get the correct version of the formula you chose, so that it reads \[\textbf{\emph{FIND}} = ...\text{all the other variables you are given}\]
 	      \begin{enumerate}
 		      \item You can do this with algebra (if you have learned that in your math class)
 
@@ -99,11 +115,49 @@ When solving math-based problems in this class, you will \emph{generally} follow
 	      \end{enumerate}
 	\item Plug in the \textbf{GIVENS} into the matching places in the formula you chose.
 	\item Solve the math problem
-	\item Record you final answer, with units.
+	\item Record you final answer, \textbf{with units}.
 	\begin{enumerate}
 		\item The units for the answer will be the same as the same type of number in the \textbf{GIVENS}
 		\item Example: You are solving for a mass, and the \textbf{GIVEN} mass is measured in $kg$ $\rightarrow$ your answer will also be in $kg$
 	\end{enumerate}
 \end{enumerate}
+
+\subsection{Worked Example 1}
+
+\begin{boxGray}{Example 1}
+	A balloon is filled with air.  The pressure of the balloon is \orange{\(10~atm\)} to start.  This expands it to a starting volume of \blue{\(2~mL\)}.  The balloon is then squeezed to a new pressure of \orange{\(28~atm\)}.  What would be the \blue{new volume} of the balloon after it is squeezed?
+\end{boxGray}
+
+\subsubsection{Find}
+
+\marginnote{\tikzmarknode{find1_start}"What would be the \blue{new volume} of the balloon after it is squeezed?" is asking us to find $V_2$}[-2.5cm]
+
+$V_2 = ?$\tikzmark{find1_end}
+
+\begin{tikzpicture}[overlay, remember picture]
+    \draw [->] ([yshift=-1.5cm, xshift=-0.25cm]pic cs:find1_start) -- ([xshift=8.25cm, yshift=0.5cm]pic cs:find1_end);
+\end{tikzpicture}
+
+\subsubsection{Given}
+
+$P_1 = \qty{10}{atm}$
+\quad\quad
+$V_1 = \qty{2}{mL}$
+\quad\quad
+$P_2 = \qty{28}{atm}$\tikzmark{given1_end}
+\marginnote{\tikzmarknode{given1_start}The problem tells a story.  I can tell if the variable is $P$, $V$ or $T$ from the units.  The $_1$ and $_2$ are from reading the story.  If the value is from \textit{before} we changed something, then it is a $_1$, otherwise, it is from \textit{after} we changed something, and it gets a $_2$}[-1.5cm]
+
+\begin{tikzpicture}[overlay, remember picture]
+    \draw [->] ([yshift=-1.5cm, xshift=-0.25cm]pic cs:given1_start) -- ([xshift=2.25cm, yshift=0.125cm]pic cs:given1_end);
+\end{tikzpicture}
+
+\subsubsection{Formula}
+
+\[V_2 = \frac{P_1 \cdot V_1}{P_2}\]\tikzmark{formula1_end}
+\marginnote{\tikzmarknode{formula1_start}I pick a formula that has the thing we are asked to find on one side, and all of the other variables on the other.}[1cm]
+
+\begin{tikzpicture}[overlay, remember picture]
+    \draw [->] ([xshift=-0.25cm]pic cs:formula1_start) -- ([xshift=9.75cm, yshift=0.5cm]pic cs:formula1_end);
+\end{tikzpicture}
 
 \end{document}

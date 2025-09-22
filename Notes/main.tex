@@ -1,13 +1,11 @@
-\documentclass{book}
-\usepackage[letterpaper,left=0.5in,marginpar=1in, textwidth=6.75in]{geometry}
+\documentclass{report}
+\usepackage[letterpaper,left=0.5in,marginpar=1.5in, textwidth=6.75in]{geometry}
 \usepackage[utf8]{inputenc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{packages.tex}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography Package
@@ -51,7 +49,7 @@
 
 \begin{titlepage}
     \newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
-    %\centering
+    \centering
     \vspace*{1in} % Add some space from the top
     \begin{Large}
         \textbf{The Physical Science Tome of Infinite Wisdom}\\
@@ -66,16 +64,12 @@
 \end{titlepage}
 
 % Main Body
-\newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
-%\centering
 \tableofcontents
 
 
 %%%%%%%%%%
 % Content
 %%%%%%%%%%
-\restoregeometry %sets the default margins that are not used on the title page, TOC etc.
-\raggedright % restores left alignment
 \subfile{./Content/Unit1-Matter/Matter.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
