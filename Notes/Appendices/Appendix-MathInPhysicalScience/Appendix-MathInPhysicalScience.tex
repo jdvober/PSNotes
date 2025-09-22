@@ -29,10 +29,8 @@ Generally, in this class, you should give your final answers in decimal form.  I
 			{\huge \num{6.02e23}}
 		\end{quote}
 
+	\newpage
 	\subsection{How to read and write Scientific Notation}
-
-	\bigskip
-	\bigskip
 
 \begin{figure}[!ht]
 	\begin{circuitikz}
@@ -61,7 +59,7 @@ Generally, in this class, you should give your final answers in decimal form.  I
 
 The \emph{Decimal} portion of the number is just all of the numbers expressed so you have
 \begin{quote}
-	One digit \textbf{.} (All the other numbers)
+	\quad\quad\quad One digit \textbf{.} (All the other numbers)
 \end{quote}
 
 Examples:
@@ -122,6 +120,7 @@ When solving math-based problems in this class, you will \emph{generally} follow
 	\end{enumerate}
 \end{enumerate}
 
+\newpage
 \subsection{Worked Example 1}
 
 \begin{boxGray}{Example 1}
@@ -159,5 +158,21 @@ $P_2 = \qty{28}{atm}$\tikzmark{given1_end}
 \begin{tikzpicture}[overlay, remember picture]
     \draw [->] ([xshift=-0.25cm]pic cs:formula1_start) -- ([xshift=9.75cm, yshift=0.5cm]pic cs:formula1_end);
 \end{tikzpicture}
+
+\subsubsection{Work}
+
+\begin{align*}
+V_2 &= \frac{P_1 \cdot V_1}{P_2}\\
+\\
+V_2 &= \frac{(\qty{10}{atm}) \cdot (\qty{2}{mL})}{(\qty{28}{atm})}\\
+\\
+V_2 &= \frac{(\qty{20}{atm \cdot mL})}{(\qty{28}{atm})}\\
+\end{align*}
+\subsubsection{Answer with units}
+\begin{align*}
+\Aboxed{V_2 &= \qty{0.71}{mL}}
+\end{align*}
+
+\marginnote{0.71428571428 rounded to two decimal places.}
 
 \end{document}
