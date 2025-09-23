@@ -18,3 +18,8 @@
 \vspace{-0.5ex}%
 \rule{\textwidth}{0.3pt}
 ] % after-code
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{../figures/}{#2.pdf_tex}
+}

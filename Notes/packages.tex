@@ -1,5 +1,16 @@
-\usepackage{enumitem}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography Package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Can cause issuses with \label
+% biber backend is necessary for apa style.  If this gives issues, try compiling on Overleaf instead / use latexmk to compile.
+\usepackage[
+backend=biber,
+style=apa,
+]{biblatex}
+\addbibresource{sources.bib}
+
+\usepackage{enumitem}
 \usepackage{multirow} % allows combining multiple rows in tables
 
 \usepackage{lipsum} %Lorem Ipsum
@@ -16,7 +27,7 @@
 \usetikzlibrary{tikzmark, arrows.meta}
 \graphicspath{ {../Resources/images/} }
 \usepackage[absolute]{textpos}
-\usepackage[colorlinks=true, linkcolor=Cerulean, urlcolor=Cerulean, citecolor=dracfg]{hyperref}
+\usepackage[colorlinks=true, linkcolor=Cerulean, urlcolor=Cerulean, citecolor=dracFg]{hyperref}
 \usepackage{indentfirst} % indent the first line of a new paragraph automatically
 \usepackage{setspace}
 
