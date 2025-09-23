@@ -66,3 +66,26 @@
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 \newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
 \newcommand{\purple}[1]{\textcolor{purple}{#1}}
+
+
+
+%Redefining SI units to always be a certain color
+
+% % Load expl3 for low-level LaTeX commands
+% \ExplSyntaxOn
+% % Save the original command for 'metre'
+% \NewCommandCopy{\oldmetre}{\metre}
+% % Redefine the 'metre' unit to be blue
+% \DeclareSIUnit{\metre}{\color{blue}\oldmetre}
+
+% % Do the same for 'second'
+% \NewCommandCopy{\oldsecond}{\second}
+% \DeclareSIUnit{\second}{\color{red}\oldsecond}
+% \ExplSyntaxOff
+
+% \begin{document}
+% The speed was \qty{5}{\metre\per\second}.
+
+% The charge was \qty{20}{C}. % Other units are unaffected.
+% \end{document}
+

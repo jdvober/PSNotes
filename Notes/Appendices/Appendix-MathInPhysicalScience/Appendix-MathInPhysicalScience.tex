@@ -3,6 +3,7 @@
 
 \begin{document}
 % Main Body
+
 \chapter{Math in Physical Science}
 
 \section{Numbers}
@@ -79,7 +80,17 @@ Positive exponents $\rightarrow$ big numbers at least > 1
 
 \section{Units}\label{sec:AppendixUnits}
 
-Units of measurement give standards so that the numbers from our measurements refer to the same thing. \autocite{SimpleWikiUnits}
+\quote{Units of measurement give standards so that the numbers from our measurements refer to the same thing.} \autocite{SimpleWikiUnits}
+
+Pretend someone tells you that they have a new cousin.  You ask how old they are.  They say 5.  You might automatically assume that they mean \num{5}~\unit{\years} old.  What if they just got a new baby cousin, who is \qty{5}{months\ old}?
+
+Telling someone HOW something was measured is pretty important.  We call the way we measured something a Unit.
+
+\begin{displayquote}
+	\begin{boxBox}{Unit}
+	\textcolor{dracRed}{{\large\textbf{\underline{Unit}}}} - What is used to tell HOW something is measured.  This comes after the number. Examples: \qty{15}{\textbf{seconds}} or
+	\end{boxBox}
+\end{displayquote}
 
 \section{Examples of solving Math Problems in Physical Science}
 
@@ -126,14 +137,14 @@ When solving math-based problems in this class, you will \emph{generally} follow
 \subsection{Worked Example 1}
 
 \begin{boxGray}{Example 1}
-	A balloon is filled with air.  The pressure of the balloon is \orange{\(10~atm\)} to start.  This expands it to a starting volume of \blue{\(2~mL\)}.  The balloon is then squeezed to a new pressure of \orange{\(28~atm\)}.  What would be the \blue{new volume} of the balloon after it is squeezed?
+	A balloon is filled with air.  The pressure of the balloon is \orange{\qty{10}{atm}} to start.  This expands it to a starting volume of \blue{\qty{2}{\milli\liter}}.  The balloon is then squeezed to a new pressure of \orange{\qty{28}{atm}}.  What would be the \blue{new volume} of the balloon after it is squeezed?
 \end{boxGray}
 
 \subsubsection{Find}
 
 \marginnote{\tikzmarknode{find1_start}"What would be the \blue{new volume} of the balloon after it is squeezed?" is asking us to find $V_2$}[-2.5cm]
 
-$V_2 = ?$\tikzmark{find1_end}
+$\orange{V_2} = \orange{?}$\tikzmark{find1_end}
 
 \begin{tikzpicture}[overlay, remember picture]
     \draw [->] ([yshift=-1.5cm, xshift=-0.25cm]pic cs:find1_start) -- ([xshift=8.25cm, yshift=0.5cm]pic cs:find1_end);
@@ -141,11 +152,11 @@ $V_2 = ?$\tikzmark{find1_end}
 
 \subsubsection{Given}
 
-$P_1 = \qty{10}{atm}$
+$\blue{P_1} = \blue{\qty{10}{atm}}$
 \quad\quad
-$V_1 = \qty{2}{mL}$
+$\orange{V_1} = \orange{\qty{2}{\milli\liter}}$
 \quad\quad
-$P_2 = \qty{28}{atm}$\tikzmark{given1_end}
+$\blue{P_2} = \blue{\qty{28}{atm}}$\tikzmark{given1_end}
 \marginnote{\tikzmarknode{given1_start}The problem tells a story.  I can tell if the variable is $P$, $V$ or $T$ from the units.  The $_1$ and $_2$ are from reading the story.  If the value is from \textit{before} we changed something, then it is a $_1$, otherwise, it is from \textit{after} we changed something, and it gets a $_2$}[-1.5cm]
 
 \begin{tikzpicture}[overlay, remember picture]
@@ -154,25 +165,26 @@ $P_2 = \qty{28}{atm}$\tikzmark{given1_end}
 
 \subsubsection{Formula}
 
-\[V_2 = \frac{P_1 \cdot V_1}{P_2}\]\tikzmark{formula1_end}
+\[\textcolor{Maroon}{\underbrace{\mystrut{6ex}\textcolor{orange}{V_2}}_{\text{The "Find" variable} \atop \text{by itself on the left}}} \textcolor{black}{=} \textcolor{Maroon}{\underbrace{\textcolor{black}{\frac{\blue{P_1} \cdot \orange{V_1}}{\mystrut{4ex}\blue{P_2}}}}_{\text{All the variables} \atop \text{you are "Given"}}}\]\tikzmark{formula1_end} % use \atop to split lines in underbraces.
 \marginnote{\tikzmarknode{formula1_start}I pick a formula that has the thing we are asked to find on one side, and all of the other variables on the other.}[1cm]
 
 \begin{tikzpicture}[overlay, remember picture]
     \draw [->] ([xshift=-0.25cm]pic cs:formula1_start) -- ([xshift=9.75cm, yshift=0.5cm]pic cs:formula1_end);
 \end{tikzpicture}
 
+
 \subsubsection{Work}
 \begin{align*}
-V_2 &= \frac{P_1 \cdot V_1}{P_2}\\
+\orange{V_2} &= \frac{\blue{P_1} \cdot \orange{V_1}}{\blue{P_2}}\\
 \\
-V_2 &= \frac{(\qty{10}{\Ccancel[orange]{atm}}) \cdot (\qty{2}{mL})}{(\qty{28}{\Ccancel[orange]{atm}})}\marginnote{You can treat the units and numbers almost as two seperate things.  See \ref{sec:AppendixUnits} for more details.}
+\orange{V_2} &= \frac{(\blue{\qty{10}{\Ccancel[red]{atm}}}) \cdot (\orange{\qty{2}{\milli\liter}})}{(\blue{\qty{28}{\Ccancel[red]{atm}}})}\marginnote{You can treat the units and numbers almost as two seperate things.  See \ref{sec:AppendixUnits} for more details.}
 \\
-V_2 &= \frac{(\qty{20}{mL})}{(\qty{28})}\\
+\orange{V_2} &= \frac{(\orange{\qty{20}{\milli\liter}})}{(\qty{28})}\\
 \end{align*}
 
 \subsubsection{Answer with units}
 \begin{align*}
-\Aboxed{V_2 &= \qty{0.71}{mL}}
+\Aboxed{\orange{V_2} &= \orange{\qty{0.71}{\milli\liter}}}
 \end{align*}
 
 \marginnote{0.71428571428 rounded to two decimal places.}
