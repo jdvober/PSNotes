@@ -2,3 +2,29 @@
 \newcommand*\mystrut[1]{\vrule width0pt height0pt depth#1\relax}
 %Ex:
 % $\underbrace{\mystrut{1.5ex}c = a + b}_{\text{my equation}}$
+
+\newcommand{\unitdef}[2]{
+	\begin{align*}
+		\Aboxed{{#1} \Rightarrow {#2}}
+	\end{align*}
+}
+
+\newcommand{\formuladef}[2]{
+
+		\textbf{$\text{Solving for} \atop \text{#1}$}
+		\[#2\]
+		%\columnbreak % Manually breaks the column to ensure content starts in the next column
+}
+
+\newenvironment{boxFormula}[3]{
+
+	\begin{formulaBox}{Formulas: #2} % Title
+		\begin{center}
+			\begin{multicols}{#1} % Specifies number of columns
+
+}{
+
+			\end{multicols}
+		\end{center}
+	\end{formulaBox}
+}

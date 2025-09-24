@@ -1,10 +1,62 @@
 \documentclass[../../main.tex]{subfiles}
 \graphicspath{{\subfix{./Resources/images/}}}
 
+\ExplSyntaxOn
+
+% Setting up a counter
+\int_new:N \g_my_module_counter_int
+
+\NewDocumentCommand{\processclist}{mm}{
+    \clist_map_inline:nn { #1 } { #2 }
+}
+
+\DeclareDocumentCommand{\getformula}{m}{
+  \seq_item:Nn \l_formulas {#1} % Define a user-level command to get the formula
+}
+\ExplSyntaxOff
+
 \begin{document}
 % Main Body
 \chapter{Matter}
 
-Matter
+\begin{boxBox}{Formulas: Density}
+	\ExplSyntaxOn
+	\int_gset:Nn \g_my_module_counter_int {1}
+	\clist_new:N \l_titles
+	\clist_new:N \l_formulas
+	\clist_set:Nn \l_titles { title1, title2, title3 }
+	\clist_set:Nn \l_formulas { formula1, formula2, formula3 }
+	\clist_map_inline:Nn \l_titles {
+
+		% Formula
+		\begin{multicols}{2}
+			\begin{boxRed}{#1}
+				\clist_item:Nn \l_formulas {\int_use:N \g_my_module_counter_int}
+			\end{boxRed}
+
+			% Units
+			\begin{boxBlue}{#1}
+				\clist_item:Nn \l_formulas {\int_use:N \g_my_module_counter_int}
+			\end{boxBlue}
+			%
+	\end{multicols}
+	% Increment the counter
+	\int_gincr:N \g_my_module_counter_int
+
+}
+	%\prg_replicate:nn {3} {
+	% \begin{centering}
+	% 	\begin{multicols}{2}
+	% 	\begin{boxRed}{Variable Title}
+	% 		Test
+	% 	\end{boxRed}
+	% 	\begin{boxBlue}{Units Title}
+	% 		Test
+	% 	\end{boxBlue}
+	% \end{multicols}
+	% \end{centering}
+	\ExplSyntaxOff
+%}
+\end{boxBox}
 
 \end{document}
