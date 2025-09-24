@@ -6,21 +6,13 @@
 \chapter{Matter}
 
 %Define array manually
-\newcommand{\showFormula}[3]{
-	\begin{multicols}{2}
-    \begin{boxRed}{When \textcolor{black}{\textbf{#1}} is unknown}
-        #2
-    \end{boxRed}
-	\begin{boxBlue}{#1 is measured in}
-        #3
-	\end{boxBlue}
-\end{multicols}
-}
 
-\begin{boxBox}{Formulas: Density}
-    \showFormula{Density}{$density = \frac{mass}{volume}$}{Units1}
-    \showFormula{Mass}{$mass = density \cdot volume$}{Units2}
-    \showFormula{Volume}{$volume = \frac{mass}{density}$}{Units3}
-\end{boxBox}
+\begin{formulaBox}{Formulas: Density}
+    \showFormula{Density}{$density = \frac{mass}{volume}$}{\unitsDensity}
+	\color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Mass}{$mass = density \cdot volume$}{\unitsMass}
+	\color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Volume}{$volume = \frac{mass}{density}$}{\unitsVolume}
+\end{formulaBox}
 
 \end{document}

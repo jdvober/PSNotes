@@ -28,3 +28,17 @@
 		\end{center}
 	\end{formulaBox}
 }
+
+\newcommand{\showFormula}[3]{
+	\begin{multicols}{2}
+    \begin{boxBackground}{When \textcolor{dracCyan}{#1} is unknown}
+        #2
+    \end{boxBackground}
+	\begin{boxBackground}{\textcolor{dracCyan}{#1} is measured in}
+        #3
+	\end{boxBackground}
+\end{multicols}
+}
+\def\unitsDensity{\unit{\frac{\gram}{\centi\meter^2}} \quad|\quad \unit{\frac{\gram}{\milli\liter}}}
+\def\unitsMass{\unit{\gram} \quad|\quad \unit{\kilo\gram} \quad|\quad \unit{\milli\gram}}
+\def\unitsVolume{\unit{\liter} \quad|\quad \unit{\milli\liter} \quad|\quad \unit{\centi\meter^2}}
