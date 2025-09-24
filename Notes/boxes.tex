@@ -59,7 +59,7 @@
 }
 
 \newenvironment{boxBackground}[1]{%
-	\begin{tcolorbox}[enhanced, colback=dracCl!75!black!10!white,colframe=dracCl,title=#1,breakable]
+	\begin{tcolorbox}[enhanced, colback=dracCl!75!black!10!white,colframe=dracCl,title=#1,breakable, boxrule=4pt, rightrule=8pt, bottomrule=8pt,]
 }{
 \end{tcolorbox}
 }
@@ -131,10 +131,7 @@
 }
 
 \newenvironment{formulaBox}[1]{
-	\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
-  colback=dracBg!70,colframe=black,colbacktitle=dracPurple!80!black,
-  title=#1,fonttitle=\bfseries, breakable,
-  boxed title style={size=small,colframe=black}]
+	\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm}, colback=dracBg!70,colframe=dracPurple,boxrule=4pt, rightrule=8pt, bottomrule=8pt, colbacktitle=dracCurrentLine, coltitle=dracFg, title=#1 Formulas,fonttitle={\huge \bfseries}, breakable, boxed title style={size=small,colframe=black}]
 }{
 	\end{tcolorbox}
 }

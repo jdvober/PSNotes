@@ -30,6 +30,7 @@
 }
 
 \newcommand{\showFormula}[3]{
+	{\large
 	\begin{multicols}{2}
     \begin{boxBackground}{When \textcolor{dracCyan}{#1} is unknown}
         #2
@@ -38,6 +39,7 @@
         #3
 	\end{boxBackground}
 \end{multicols}
+	}
 }
 \def\unitsDensity{\unit{\frac{\gram}{\centi\meter^2}} \quad|\quad \unit{\frac{\gram}{\milli\liter}}}
 \def\unitsMass{\unit{\gram} \quad|\quad \unit{\kilo\gram} \quad|\quad \unit{\milli\gram}}
