@@ -74,12 +74,14 @@
 %%%%%%%%%%
 % Content
 %%%%%%%%%%
+\addcontentsline{toc}{part}{\textcolor{red}{\underline{Physical Science Topics}}}
 \subfile{./Content/Unit1-Matter/Matter.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendices
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{appendix.tex}
+\addcontentsline{toc}{part}{\textcolor{red}{\underline{Appendices}}}
 \subfile{./Appendices/Appendix-TakingExcellentNotes/Appendix-TakingExcellentNotes.tex}
 \subfile{./Appendices/Appendix-CalculatingGrades/Appendix-CalculatingGrades.tex}
 \subfile{./Appendices/Appendix-MathInPhysicalScience/Appendix-MathInPhysicalScience.tex}
@@ -89,6 +91,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % If you would like to include a Bibliography, uncomment these lines
 \printbibliography
-\addcontentsline{toc}{chapter}{Bibliography}
+\addcontentsline{toc}{chapter}{\textcolor{red}{Bibliography}}
 
 \end{document}
