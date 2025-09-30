@@ -1,31 +1,49 @@
-\pgfplotsset{
-	colormap={purpleandred}{
-			% Start Color (at position 0)
-			rgb255=(189,147,249)
-			% End Color (at position 1)
-			rgb255=(255,30,50)
+% PGFkeys definition for the gradientArrow command
+\pgfkeys{
+	/mycommands/gradientArrow/.is family,
+	/mycommands/gradientArrow/.cd,
+	% Define keys with their default values
+	tipColor/.store in=\gradientArrowTipColor,
+	tailColor/.store in=\gradientArrowTailColor,
+	width/.store in=\gradientArrowWidth,
+	length/.store in=\gradientArrowHeight,
+	rotate/.store in=\gradientArrowRotate,
+	xpos/.store in=\gradientArrowXPos,
+	ypos/.store in=\gradientArrowYPos,
+	textColor/.store in=\gradientArrowTextColor,
+	% A style key to easily apply all defaults
+	defaults/.style={
+			tipColor=red,
+			tailColor=green,
+			width=0.25cm,
+			length=4cm,
+			rotate=90,
+			xpos=0,
+			ypos=0,
+			textColor=black,
 		},
-	colormap={redandyellow}{
-			rgb255=(255,0,0)
-			rgb255=(255,255,0)
-		}
 }
 
-% Use
-
-% % 2. Draw the Gradient-Filled Arrow
-% \node[
-%     single arrow,
-%     minimum height=4cm,
-%     minimum width=0.25cm,
-%     draw=black,
-%     line width=0.5pt,
-%     anchor=south,
-%     shading=axis,
-%     % Crucial: Update the colors to use the RGB values
-%     % The gradient starts at the bottom and ends at the top.
-%     top color={rgb:red,255; green,30; blue,50},    % The color at the top (light pinkish)
-%     bottom color={rgb:red,189; green,147; blue,249}, % The color at the bottom (purplish)
-%     single arrow head extend=0.2cm,
-%     rotate=90              % Rotates the arrow 90 degrees to point UPWARDS
-% ] at (-2,1.75) {\dracFg{Complexity}};
+% The newcommand definition
+% #1: Optional named parameters
+% #2: Position, e.g., (0,0) or at (0,0)
+% #3: Text inside the node (not used in this specific command)
+\newcommand{\gradientArrow}[2][]{
+	\begin{scope}
+		% Process the keys locally within a group
+		\pgfkeys{/mycommands/gradientArrow/.cd, defaults, #1}
+		\node[
+			single arrow,
+			minimum height=\gradientArrowHeight,
+			minimum width=\gradientArrowWidth,
+			draw=black,
+			line width=0.5pt,
+			shading=axis,
+			top color={\gradientArrowTipColor},
+			bottom color={\gradientArrowTailColor},
+			single arrow head extend=0.2cm,
+			anchor=south,
+			rotate=\gradientArrowRotate
+		] at (\gradientArrowXPos, \gradientArrowYPos) {\color{\gradientArrowTextColor}{#2}};
+	\end{scope}
+}

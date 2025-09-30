@@ -38,6 +38,7 @@
 
     \section{Kinds of Matter}
 
+
     \1 3 Kinds
 
     % Elements
@@ -54,15 +55,8 @@
                     minimum height=5cm,
                     shading=#1
                 }]
-        % Box styles
-        \tikzstyle{rect}=[draw=black,
-        rectangle,
-        fill=gray,
-        fill opacity=0.2,
-        text opacity=1,
-        minimum width=75pt,
-        minimum height=25pt,
-        align=center]
+        % Define the 'rect' style for nodes
+        \tikzset{rect/.style={draw, rectangle, rounded corners, minimum width=2cm, minimum height=1cm, fill=white}}
 
         % Nodes for boxes
         \node[rect] (elems) {Elements};
@@ -74,36 +68,12 @@
         \draw[->, thick] (cmpds.north) -- (mixs.south) node[midway, xshift=16mm]{\red{Mix} together to get};
 
         \draw[->] (cmpds.north)--(mixs.south)node[midway, xshift=16mm]{\red{Mix} together to get};
-        % Define the Starting and Ending RGB Colors
-        % Start Color (Bottom): RGB(189, 147, 249) -> A purplish color
-        % End Color (Top):    RGB(255, 121, 198) -> A pinkish color
+        Define the Starting and Ending RGB Colors
+        Start Color (Bottom): RGB(189, 147, 249) -> A purplish color
+        End Color (Top):    RGB(255, 121, 198) -> A pinkish color
 
-        % 1. Define the Colormap (Gradient)
-        \pgfplotsset{
-            colormap={newgradient}{
-                    % Start Color (at position 0)
-                    rgb255=(189,147,249)
-                    % End Color (at position 1)
-                    rgb255=(255,30,50)
-                }
-        }
+        \gradientArrow[xpos=-1.5cm, ypos=1.8cm, length=5cm, tailColor=dracGreen, tipColor=dracRed]{Complexity}
 
-        % 2. Draw the Gradient-Filled Arrow
-        \node[
-            single arrow,
-            minimum height=4cm,
-            minimum width=0.25cm,
-            draw=black,
-            line width=0.5pt,
-            anchor=south,
-            shading=axis,
-            % Crucial: Update the colors to use the RGB values
-            % The gradient starts at the bottom and ends at the top.
-            top color={rgb:red,255; green,30; blue,50},    % The color at the top (light pinkish)
-            bottom color={rgb:red,189; green,147; blue,249}, % The color at the bottom (purplish)
-            single arrow head extend=0.2cm,
-            rotate=90              % Rotates the arrow 90 degrees to point UPWARDS
-        ] at (-2,1.75) {\dracFg{Complexity}};
     \end{tikzpicture}
 
     \1 Elements
