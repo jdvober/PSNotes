@@ -5,10 +5,11 @@
 % Can cause issuses with \label
 % biber backend is necessary for apa style.  If this gives issues, try compiling on Overleaf instead / use latexmk to compile.
 \usepackage[
-backend=biber,
-style=apa,
+	backend=biber,
+	style=ieee,
 ]{biblatex}
 \addbibresource{sources.bib}
+\addbibresource{../Bibliography/sources.bib}
 
 \usepackage{enumitem}
 \usepackage{multirow} % allows combining multiple rows in tables
@@ -25,7 +26,8 @@ style=apa,
 \usepackage{csquotes} % For block quotations
 \usepackage{graphicx}
 \usepackage{circuitikz}
-\usetikzlibrary{tikzmark, arrows.meta}
+\usetikzlibrary{tikzmark, arrows.meta, positioning, shapes.arrows}
+\usepackage{pgfplots}
 \graphicspath{ {../Resources/images/} }
 \usepackage[absolute]{textpos}
 \usepackage[colorlinks=true, linkcolor=dracBlue, urlcolor=dracBlue, citecolor=dracBlue]{hyperref}

@@ -24,9 +24,10 @@
 \newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Boxes etc.
+% Custom Boxes,  Arrows etc.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{boxes.tex}
+\input{gradientArrows.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Figure Support
@@ -68,7 +69,11 @@
 \end{titlepage}
 
 % Main Body
-\tableofcontents
+\begin{center}
+    \newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
+    \centering
+    \tableofcontents
+\end{center}
 
 
 %%%%%%%%%%
@@ -90,7 +95,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % If you would like to include a Bibliography, uncomment these lines
-\printbibliography
-\addcontentsline{toc}{chapter}{\textcolor{red}{Bibliography}}
+\begin{center}
+    \newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
+    \centering
+    \printbibliography
+    \addcontentsline{toc}{chapter}{\textcolor{red}{Bibliography}}
+\end{center}
 
 \end{document}

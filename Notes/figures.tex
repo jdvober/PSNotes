@@ -3,8 +3,7 @@
 \usepackage{pdfpages}
 \usepackage{transparent}
 \usepackage{titlesec}
-\titleformat
-{\chapter} % command
+\titleformat{\chapter} % command
 [display] % shape
 {\bfseries\Large\itshape} % format
 {Unit \thechapter} % label
@@ -15,8 +14,21 @@
     \centering
 } % before-code
 [
-\vspace{-0.5ex}%
-\rule{\textwidth}{0.3pt}
+    \vspace{-0.5ex}%
+    \rule{\textwidth}{0.3pt}
+] % after-code
+
+\titleformat{\section} % command
+[display] % shape
+{\bfseries\Large\itshape} % format
+{} % label
+{0.5ex} % sep
+{
+    % \vspace{1ex}
+} % before-code
+[
+    % \vspace{-0.5ex}%
+    % \rule{\textwidth}{0.3pt}
 ] % after-code
 
 \newcommand{\incfig}[2][1]{%

@@ -1,0 +1,31 @@
+\pgfplotsset{
+	colormap={purpleandred}{
+			% Start Color (at position 0)
+			rgb255=(189,147,249)
+			% End Color (at position 1)
+			rgb255=(255,30,50)
+		},
+	colormap={redandyellow}{
+			rgb255=(255,0,0)
+			rgb255=(255,255,0)
+		}
+}
+
+% Use
+
+% % 2. Draw the Gradient-Filled Arrow
+% \node[
+%     single arrow,
+%     minimum height=4cm,
+%     minimum width=0.25cm,
+%     draw=black,
+%     line width=0.5pt,
+%     anchor=south,
+%     shading=axis,
+%     % Crucial: Update the colors to use the RGB values
+%     % The gradient starts at the bottom and ends at the top.
+%     top color={rgb:red,255; green,30; blue,50},    % The color at the top (light pinkish)
+%     bottom color={rgb:red,189; green,147; blue,249}, % The color at the bottom (purplish)
+%     single arrow head extend=0.2cm,
+%     rotate=90              % Rotates the arrow 90 degrees to point UPWARDS
+% ] at (-2,1.75) {\dracFg{Complexity}};

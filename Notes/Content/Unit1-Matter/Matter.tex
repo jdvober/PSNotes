@@ -5,14 +5,141 @@
 % Main Body
 \chapter{Matter}
 
-%Define array manually
+\section{What is Matter?}
+\begin{outline}[enumerate]
+    \1 \colorbox{dracPink}{Matter is the “stuff” that makes up everything in the universe.}
 
+    \begin{displayquote}
+        \begin{boxBox}{Definition}
+            {\large\textbf{\underline{Matter}}} - Anything that has mass and takes up space.
+        \end{boxBox}
+    \end{displayquote}
+
+    \1 Properties of Matter
+    \2 Each specific substance has its own combination of properties that can be used to identify the substance.
+    \2 \colorbox{dracPink}{Matter can \pdftooltip{$\Delta$}{$\Delta$ means "Change"} it's properties.}
+    \3 Ex. Water is a
+    \4 Liquid at room temperate
+    \4 Solid at cold temperatures
+    \4 Gas at high temperatures
+    \2 Examples:
+    \3 Hardness
+    \3 Texture
+    \3 Flammability
+    \3 Color
+    \3 Shape
+    \3 Temperature
+
+    \begin{displayquote}
+        \begin{boxBox}{Definition}
+            {\large\textbf{\underline{Chemistry}}} - the study of the properties of substances and how matter changes.
+        \end{boxBox}
+    \end{displayquote}
+
+    \section{Kinds of Matter}
+
+    \1 3 Kinds
+
+    % Elements
+    %     |     combine together to get
+    %     V
+    % Compounds
+    %     |     mix together to get
+    %     V
+    % Mixtures
+    \begin{tikzpicture}[>=latex, colorbar arrow/.style={
+                    shape=double arrow,
+                    double arrow head extend=0.125cm,
+                    shape border rotate=90,
+                    minimum height=5cm,
+                    shading=#1
+                }]
+        % Box styles
+        \tikzstyle{rect}=[draw=black,
+        rectangle,
+        fill=gray,
+        fill opacity=0.2,
+        text opacity=1,
+        minimum width=75pt,
+        minimum height=25pt,
+        align=center]
+
+        % Nodes for boxes
+        \node[rect] (elems) {Elements};
+        \node[rect, above=of elems] (cmpds) {Compounds};
+        \node[rect, above=of cmpds] (mixs) {Mixtures};
+
+        % Arrows between boxes
+        \draw[->, thick] (elems.north) -- (cmpds.south) node[midway, xshift=20mm]{\red{Combine} together to get};
+        \draw[->, thick] (cmpds.north) -- (mixs.south) node[midway, xshift=16mm]{\red{Mix} together to get};
+
+        \draw[->] (cmpds.north)--(mixs.south)node[midway, xshift=16mm]{\red{Mix} together to get};
+        % Define the Starting and Ending RGB Colors
+        % Start Color (Bottom): RGB(189, 147, 249) -> A purplish color
+        % End Color (Top):    RGB(255, 121, 198) -> A pinkish color
+
+        % 1. Define the Colormap (Gradient)
+        \pgfplotsset{
+            colormap={newgradient}{
+                    % Start Color (at position 0)
+                    rgb255=(189,147,249)
+                    % End Color (at position 1)
+                    rgb255=(255,30,50)
+                }
+        }
+
+        % 2. Draw the Gradient-Filled Arrow
+        \node[
+            single arrow,
+            minimum height=4cm,
+            minimum width=0.25cm,
+            draw=black,
+            line width=0.5pt,
+            anchor=south,
+            shading=axis,
+            % Crucial: Update the colors to use the RGB values
+            % The gradient starts at the bottom and ends at the top.
+            top color={rgb:red,255; green,30; blue,50},    % The color at the top (light pinkish)
+            bottom color={rgb:red,189; green,147; blue,249}, % The color at the bottom (purplish)
+            single arrow head extend=0.2cm,
+            rotate=90              % Rotates the arrow 90 degrees to point UPWARDS
+        ] at (-2,1.75) {\dracFg{Complexity}};
+    \end{tikzpicture}
+
+    \1 Elements
+
+    \begin{displayquote}
+        \begin{boxBox}{Definition}
+            {\large\textbf{\underline{Element}}} - A substance that is made up of only one type of atom. \autocite{SimpleWiki-ChemicalElement}
+        \end{boxBox}
+    \end{displayquote}
+
+    \2 If you break down an element any more, then it just becomes generic \emph{protons}, \emph{neutrons} and \emph{electrons}.
+    \3 It stops behaving like that element
+    \\- Ex: If you break down Gold into protons, neutrons and electrons, it is no longer a shiny metal that conducts electricity.
+    \2
+
+    \1 Compounds
+
+    \begin{displayquote}
+        \begin{boxBox}{Definition}
+            {\large\textbf{\underline{Compound}}} - A chemical compound is a substance made of two or more different elements joined together by chemical bonds in a fixed ratio.
+            \autocite{SimpleWiki-ChemicalCompound}
+        \end{boxBox}
+    \end{displayquote}
+
+    \1 Mixtures
+
+\end{outline}
+
+\newpage
 \begin{formulaBox}{Density}
-    \showFormula{Density}{$density = \frac{mass}{volume}$}{\unitsDensity}
-	\color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
-    \showFormula{Mass}{$mass = density \cdot volume$}{\unitsMass}
-	\color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
-    \showFormula{Volume}{$volume = \frac{mass}{density}$}{\unitsVolume}
+    \showFormula{Density}{\center$density = \frac{mass}{volume}$}{\center\unitsDensity}
+    \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Mass}{\center$mass = density \cdot volume$}{\center\unitsMass}
+    \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Volume}{\center$volume = \frac{mass}{density}$}{\center\unitsVolume}
 \end{formulaBox}
 
+\printbibliography
 \end{document}

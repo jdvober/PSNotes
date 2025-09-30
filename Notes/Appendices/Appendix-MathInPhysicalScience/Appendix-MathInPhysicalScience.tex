@@ -16,22 +16,22 @@ Generally, in this class, you should give your final answers in decimal form.  I
 
 \section{Scientific Notation}
 
-	\subsection{Why}
+\subsection{Why}
 
-		Scientific Notation is just a more convienent way to display really big and really small numbers.  For instance, instead of writing
+Scientific Notation is just a more convienent way to display really big and really small numbers.  For instance, instead of writing
 
-		\begin{quote}
-			{\huge 6,020,000,000,000,000,000,000,000}
-		\end{quote}
+\begin{quote}
+	{\huge 6,020,000,000,000,000,000,000,000}
+\end{quote}
 
-		over and over in a problem, it is much more convienent to write
+over and over in a problem, it is much more convienent to write
 
-		\begin{quote}
-			{\huge \num{6.02e23}}
-		\end{quote}
+\begin{quote}
+	{\huge \num{6.02e23}}
+\end{quote}
 
-	\newpage
-	\subsection{How to read and write Scientific Notation}
+\newpage
+\subsection{How to read and write Scientific Notation}
 
 \begin{figure}[!ht]
 	\begin{circuitikz}
@@ -80,7 +80,7 @@ Positive exponents $\rightarrow$ big numbers at least > 1
 
 \section{Units}\label{sec:AppendixUnits}
 
-\quote{Units of measurement give standards so that the numbers from our measurements refer to the same thing.} \autocite{SimpleWikiUnits}
+\quote{Units of measurement give standards so that the numbers from our measurements refer to the same thing.} \autocite{SimpleWiki-UnitsOfMeasure}
 
 Pretend someone tells you that they have a new cousin.  You ask how old they are.  They say 5.  You might automatically assume that they mean \num{5}~\unit{\years} old.  What if they just got a new baby cousin, who is \qty{5}{months\ old}?
 
@@ -88,7 +88,7 @@ Telling someone HOW something was measured is pretty important.  We call the way
 
 \begin{displayquote}
 	\begin{boxBox}{Definition}
-	{\large\textbf{\underline{Unit}}} - What is used to tell HOW something is measured.  This comes after the number. Examples: \qty{15}{\textbf{seconds}} or
+		{\large\textbf{\underline{Unit}}} - What is used to tell HOW something is measured.  This comes after the number. Examples: \qty{15}{\textbf{seconds}} or
 	\end{boxBox}
 \end{displayquote}
 
@@ -100,7 +100,7 @@ Now that we have discussed what units are in Math and Science, let's look the ge
 \subsection{General Steps}
 When solving math-based problems in this class, you will \emph{generally} follow the following five steps:
 
- \begin{enumerate}
+\begin{enumerate}
 	\item Write down the numbers that you are \textbf{GIVEN} (with units).
 	\item Write down the number you are asked to \textbf{FIND} (with units.)
 	      \begin{enumerate}
@@ -127,10 +127,10 @@ When solving math-based problems in this class, you will \emph{generally} follow
 	\item Plug in the \textbf{GIVENS} into the matching places in the formula you chose.
 	\item Solve the math problem
 	\item Record you final answer, \textbf{with units}.
-	\begin{enumerate}
-		\item The units for the answer will be the same as the same type of number in the \textbf{GIVENS}
-		\item Example: You are solving for a mass, and the \textbf{GIVEN} mass is measured in $kg$ $\rightarrow$ your answer will also be in $kg$
-	\end{enumerate}
+	      \begin{enumerate}
+		      \item The units for the answer will be the same as the same type of number in the \textbf{GIVENS}
+		      \item Example: You are solving for a mass, and the \textbf{GIVEN} mass is measured in $kg$ $\rightarrow$ your answer will also be in $kg$
+	      \end{enumerate}
 \end{enumerate}
 
 \newpage
@@ -147,7 +147,7 @@ When solving math-based problems in this class, you will \emph{generally} follow
 $\orange{V_2} = \orange{?}$\tikzmark{find1_end}
 
 \begin{tikzpicture}[overlay, remember picture]
-    \draw [->] ([yshift=-1.5cm, xshift=-0.25cm]pic cs:find1_start) -- ([xshift=8.25cm, yshift=0.5cm]pic cs:find1_end);
+	\draw [->] ([yshift=-1.5cm, xshift=-0.25cm]pic cs:find1_start) -- ([xshift=8.25cm, yshift=0.5cm]pic cs:find1_end);
 \end{tikzpicture}
 
 \subsubsection{Given}
@@ -160,7 +160,7 @@ $\blue{P_2} = \blue{\qty{28}{atm}}$\tikzmark{given1_end}
 \marginnote{\tikzmarknode{given1_start}The problem tells a story.  I can tell if the variable is $P$, $V$ or $T$ from the units.  The $_1$ and $_2$ are from reading the story.  If the value is from \textit{before} we changed something, then it is a $_1$, otherwise, it is from \textit{after} we changed something, and it gets a $_2$}[-1.5cm]
 
 \begin{tikzpicture}[overlay, remember picture]
-    \draw [->] ([yshift=-1.5cm, xshift=-0.25cm]pic cs:given1_start) -- ([xshift=2.25cm, yshift=0.125cm]pic cs:given1_end);
+	\draw [->] ([yshift=-1.5cm, xshift=-0.25cm]pic cs:given1_start) -- ([xshift=2.25cm, yshift=0.125cm]pic cs:given1_end);
 \end{tikzpicture}
 
 \subsubsection{Formula}
@@ -169,22 +169,22 @@ $\blue{P_2} = \blue{\qty{28}{atm}}$\tikzmark{given1_end}
 \marginnote{\tikzmarknode{formula1_start}I pick a formula that has the thing we are asked to find on one side, and all of the other variables on the other.}[1cm]
 
 \begin{tikzpicture}[overlay, remember picture]
-    \draw [->] ([xshift=-0.25cm]pic cs:formula1_start) -- ([xshift=9.75cm, yshift=0.5cm]pic cs:formula1_end);
+	\draw [->] ([xshift=-0.25cm]pic cs:formula1_start) -- ([xshift=9.75cm, yshift=0.5cm]pic cs:formula1_end);
 \end{tikzpicture}
 
 
 \subsubsection{Work}
 \begin{align*}
-\orange{V_2} &= \frac{\blue{P_1} \cdot \orange{V_1}}{\blue{P_2}}\\
-\\
-\orange{V_2} &= \frac{(\blue{\qty{10}{\Ccancel[red]{atm}}}) \cdot (\orange{\qty{2}{\milli\liter}})}{(\blue{\qty{28}{\Ccancel[red]{atm}}})}\marginnote{You can treat the units and numbers almost as two seperate things.  See \ref{sec:AppendixUnits} for more details.}
-\\
-\orange{V_2} &= \frac{(\orange{\qty{20}{\milli\liter}})}{(\qty{28})}\\
+	\orange{V_2} & = \frac{\blue{P_1} \cdot \orange{V_1}}{\blue{P_2}}                                                                                                                                                                                                         \\
+	\\
+	\orange{V_2} & = \frac{(\blue{\qty{10}{\Ccancel[red]{atm}}}) \cdot (\orange{\qty{2}{\milli\liter}})}{(\blue{\qty{28}{\Ccancel[red]{atm}}})}\marginnote{You can treat the units and numbers almost as two seperate things.  See \ref{sec:AppendixUnits} for more details.}
+	\\
+	\orange{V_2} & = \frac{(\orange{\qty{20}{\milli\liter}})}{(\qty{28})}                                                                                                                                                                                                     \\
 \end{align*}
 
 \subsubsection{Answer with units}
 \begin{align*}
-\Aboxed{\orange{V_2} &= \orange{\qty{0.71}{\milli\liter}}}
+	\Aboxed{\orange{V_2} & = \orange{\qty{0.71}{\milli\liter}}}
 \end{align*}
 
 \marginnote{0.71428571428 rounded to two decimal places.}[-2em]
