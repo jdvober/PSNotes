@@ -1,0 +1,84 @@
+% For determining custom spacing under underbrackets
+\newcommand*\mystrut[1]{\vrule width0pt height0pt depth#1\relax}
+%Ex:
+% $\underbrace{\mystrut{1.5ex}c = a + b}_{\text{my equation}}$
+
+\newcommand{\unitdef}[2]{
+	\begin{align*}
+		\Aboxed{{#1} \Rightarrow {#2}}
+	\end{align*}
+}
+
+\newcommand{\formuladef}[2]{
+
+	\textbf{$\text{Solving for} \atop \text{#1}$}
+	\[#2\]
+	%\columnbreak % Manually breaks the column to ensure content starts in the next column
+}
+
+\newenvironment{boxFormula}[3]{
+
+	\begin{formulaBox}{Formulas: #2} % Title
+		\begin{center}
+			\begin{multicols}{#1} % Specifies number of columns
+
+				}{
+
+			\end{multicols}
+		\end{center}
+	\end{formulaBox}
+}
+
+\newcommand{\showFormula}[3]{
+	{\large
+			\begin{multicols}{2}
+				\begin{boxBackground}{When \textcolor{dracCyan}{#1} is unknown}
+					#2
+				\end{boxBackground}
+				\begin{boxBackground}{\textcolor{dracCyan}{#1} is measured in}
+					#3
+				\end{boxBackground}
+			\end{multicols}
+		}
+}
+
+% Custom Highlighting Command
+\newcommand{\highlight}[2][]{
+	\pgfkeys{/highlight/.cd}
+	\pgfkeys{
+		/highlight/color/.initial=dracPink,
+	}
+	\edef\highlightcolor{\pgfkeysvalueof{/highlight/color}}%
+
+	\colorbox{\highlightcolor}{#2}
+}
+
+% For full width items in an enumerate, outline setting etc.
+\newcommand{\unindent}[1]{% #1 = text
+	\par\hspace*{-\@totalleftmargin}\parbox{\textwidth}{\strut #1\strut}\par}
+\makeatother
+
+\input{./sourced/customCommands/gradientArrows.tex}
+
+\newcommand{\Definition}[3]{
+	\unindent{
+		\begin{boxBox}{Definition}
+			\textbf{\underline{{\large #1}}} - {#2} {#3}
+		\end{boxBox}
+	}
+}
+
+% Used when making math with braces underneath, along with text.
+\newcommand{\mathBrace}[2]{
+	\stackunder{#1}{\mathclap{\underbrace{\hphantom{#1}}_{#2}}}
+}
+
+% Define a custom command for the circled atoms in a chemfig diagram
+\newcommand{\circledatom}[2]{%
+	\tikz[baseline=(char.base)]\node[
+		draw,
+		circle,
+		fill=#1,
+		inner sep=1pt,
+		minimum size=1.5em] (char) {\dracBg{#2}};
+}

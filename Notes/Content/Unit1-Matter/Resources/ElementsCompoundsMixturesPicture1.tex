@@ -1,0 +1,34 @@
+% Elements
+%     |     combine together to get
+%     V
+% Compounds
+%     |     mix together to get
+%     V
+% Mixtures
+\begin{tikzpicture}[>=latex, colorbar arrow/.style={
+				shape=double arrow,
+				double arrow head extend=0.125cm,
+				shape border rotate=90,
+				minimum height=5cm,
+				shading=#1
+			}]
+	% Define the 'rect' style for nodes
+	\tikzset{rect/.style={draw, rectangle, rounded corners, minimum width=2cm, minimum height=1cm, fill=white}}
+
+	% Nodes for boxes
+	\node[rect] (elems) {Elements};
+	\node[rect, above=of elems] (cmpds) {Compounds};
+	\node[rect, above=of cmpds] (mixs) {Mixtures};
+
+	% Arrows between boxes
+	\draw[->, thick] (elems.north) -- (cmpds.south) node[midway, xshift=20mm]{\red{Combine} together to get};
+	\draw[->, thick] (cmpds.north) -- (mixs.south) node[midway, xshift=16mm]{\red{Mix} together to get};
+
+	\draw[->] (cmpds.north)--(mixs.south)node[midway, xshift=16mm]{\red{Mix} together to get};
+	Define the Starting and Ending RGB Colors
+	Start Color (Bottom): RGB(189, 147, 249) -> A purplish color
+	End Color (Top):    RGB(255, 121, 198) -> A pinkish color
+
+	\gradientArrow[xpos=-1.5cm, ypos=1.8cm, length=5cm, tailColor=dracGreen, tipColor=dracRed]{Complexity}
+
+\end{tikzpicture}

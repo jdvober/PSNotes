@@ -9,15 +9,11 @@
 \begin{outline}[enumerate]
     \1 \colorbox{dracPink}{Matter is the “stuff” that makes up everything in the universe.}
 
-    \begin{displayquote}
-        \begin{boxBox}{Definition}
-            {\large\textbf{\underline{Matter}}} - Anything that has mass and takes up space.
-        \end{boxBox}
-    \end{displayquote}
+    \Definition{Matter}{Anything that has mass and takes up space.}{\autocite{a2003_matter}}
 
     \1 Properties of Matter
     \2 Each specific substance has its own combination of properties that can be used to identify the substance.
-    \2 \colorbox{dracPink}{Matter can \pdftooltip{$\Delta$}{$\Delta$ means "Change"} it's properties.}
+    \2 \highlight{Matter can \pdftooltip{\marginnote{$\Delta$ means "Change"}{$\Delta$}}{$\Delta$ means "Change"} it's properties.}
     \3 Ex. Water is a
     \4 Liquid at room temperate
     \4 Solid at cold temperatures
@@ -30,73 +26,63 @@
     \3 Shape
     \3 Temperature
 
-    \begin{displayquote}
-        \begin{boxBox}{Definition}
-            {\large\textbf{\underline{Chemistry}}} - the study of the properties of substances and how matter changes.
-        \end{boxBox}
-    \end{displayquote}
+    \newpage
+
+    \Definition{Chemistry}{The science that studies what everything is made of and how it changes.}{\autocite{a2003_chemistry}}
 
     \section{Kinds of Matter}
 
-
-    \1 3 Kinds
-
-    % Elements
-    %     |     combine together to get
-    %     V
-    % Compounds
-    %     |     mix together to get
-    %     V
-    % Mixtures
-    \begin{tikzpicture}[>=latex, colorbar arrow/.style={
-                    shape=double arrow,
-                    double arrow head extend=0.125cm,
-                    shape border rotate=90,
-                    minimum height=5cm,
-                    shading=#1
-                }]
-        % Define the 'rect' style for nodes
-        \tikzset{rect/.style={draw, rectangle, rounded corners, minimum width=2cm, minimum height=1cm, fill=white}}
-
-        % Nodes for boxes
-        \node[rect] (elems) {Elements};
-        \node[rect, above=of elems] (cmpds) {Compounds};
-        \node[rect, above=of cmpds] (mixs) {Mixtures};
-
-        % Arrows between boxes
-        \draw[->, thick] (elems.north) -- (cmpds.south) node[midway, xshift=20mm]{\red{Combine} together to get};
-        \draw[->, thick] (cmpds.north) -- (mixs.south) node[midway, xshift=16mm]{\red{Mix} together to get};
-
-        \draw[->] (cmpds.north)--(mixs.south)node[midway, xshift=16mm]{\red{Mix} together to get};
-        Define the Starting and Ending RGB Colors
-        Start Color (Bottom): RGB(189, 147, 249) -> A purplish color
-        End Color (Top):    RGB(255, 121, 198) -> A pinkish color
-
-        \gradientArrow[xpos=-1.5cm, ypos=1.8cm, length=5cm, tailColor=dracGreen, tipColor=dracRed]{Complexity}
-
-    \end{tikzpicture}
+    \input{Content/Unit1-Matter/Resources/ElementsCompoundsMixturesPicture1.tex}
 
     \1 Elements
 
-    \begin{displayquote}
-        \begin{boxBox}{Definition}
-            {\large\textbf{\underline{Element}}} - A substance that is made up of only one type of atom. \autocite{SimpleWiki-ChemicalElement}
-        \end{boxBox}
-    \end{displayquote}
+    \Definition{Element}{A substance that is made up of only one type of atom.}{\autocite{a2003_chemical}}
 
     \2 If you break down an element any more, then it just becomes generic \emph{protons}, \emph{neutrons} and \emph{electrons}.
     \3 It stops behaving like that element
-    \\- Ex: If you break down Gold into protons, neutrons and electrons, it is no longer a shiny metal that conducts electricity.
-    \2
+    \begin{itemize}
+        \item Ex: If you break down Gold into protons, neutrons and electrons, it is no longer a shiny metal that conducts electricity.
+    \end{itemize}
+    \2 Each element has its own symbol
+    \3 Usually the first 1 - 2 letters in the name
+    \3 \highlight{Always CAPITAL\ lowercase if two letters long}
+    \3 Examples
+    \begin{itemize}
+        \item \highlight{O $\rightarrow$ \underline{O}xygen}
+        \item \highlight{He $\rightarrow$ \underline{He}lium}
+        \item C $\rightarrow$ \underline{C}arbon
+        \item H $\rightarrow$ \underline{H}ydrogen
+        \item Al $\rightarrow$ \underline{Al}uminum
+        \item Au $\rightarrow$ \marginnote{The latin word for Gold is "\underline{Au}rum", so it still follows the rule, just in a different language.}{Gold}
+    \end{itemize}
+
 
     \1 Compounds
 
-    \begin{displayquote}
-        \begin{boxBox}{Definition}
-            {\large\textbf{\underline{Compound}}} - A chemical compound is a substance made of two or more different elements joined together by chemical bonds in a fixed ratio.
-            \autocite{SimpleWiki-ChemicalCompound}
-        \end{boxBox}
-    \end{displayquote}
+    \Definition{Compound}{A chemical compound is a substance made of two or more different elements joined together by chemical bonds in a fixed ratio.}{\autocite{a2004_chemical}}
+
+
+    \2 Ex: Carbon Dioxide ($CO_2$)\\
+
+    \vspace{1cm}
+
+    \chemfig{%
+        \circledatom{dracOrange}{O}-\circledatom{dracBg}{\dracFg{C}}-\circledatom{dracOrange}{O}
+    }
+
+    \vspace{1cm}
+    \2 Ex: Water ($H_{2}O$)\\
+
+    \chemfig{%
+        \circledatom{dracOrange}{O}%
+        (-[:-52.25]\circledatom{dracCyan}{H})%
+        (-[:232.25]\circledatom{dracCyan}{H})% 180+ 52.5 <-- lower left hydrogen
+    }
+
+    \Definition{Chemical Formula}{A combination of symbols that show the ratio of elements in a compound.}{\autocite{a2006_chemical}}
+
+    \2 Examples
+    \- \(CO_2\)
 
     \1 Mixtures
 
@@ -111,5 +97,4 @@
     \showFormula{Volume}{\center$volume = \frac{mass}{density}$}{\center\unitsVolume}
 \end{formulaBox}
 
-\printbibliography
 \end{document}

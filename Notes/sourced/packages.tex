@@ -11,13 +11,14 @@
 \addbibresource{sources.bib}
 \addbibresource{../Bibliography/sources.bib}
 
-\usepackage{enumitem}
 \usepackage{multirow} % allows combining multiple rows in tables
 \usepackage{multicol}
 
 \usepackage{lipsum} %Lorem Ipsum
 
 \usepackage{marginnote} % For notes in the margin
+\usepackage{stackengine} % Allows for stacking of math commands inside of math modes
+\stackMath % Use math mode inside stacking commands
 
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -28,8 +29,8 @@
 \usepackage{circuitikz}
 \usetikzlibrary{tikzmark, arrows.meta, positioning, shapes.arrows}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
 \usepackage{pgfkeys}
-% \usepackage{pgfkeyx}
 \graphicspath{ {../Resources/images/} }
 \usepackage[absolute]{textpos}
 \usepackage[colorlinks=true, linkcolor=dracBlue, urlcolor=dracBlue, citecolor=dracBlue]{hyperref}
@@ -40,13 +41,17 @@
 \usepackage{lastpage}
 
 \usepackage{outlines} % Outline environment
+\usepackage{enumitem}
 
-% Fancy Math Symbols
+% Math
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{siunitx} %https://texdoc.org/serve/siunitx/0 <----- Very important read
 \usepackage{mathtools}
 \usepackage[makeroom, thicklines]{cancel}
+
+% Chemistry
+\usepackage{chemfig}
 
 \usepackage{markdown} % allows for md syntaxinside
 \usepackage{pdfcomment}

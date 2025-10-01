@@ -80,7 +80,7 @@ Positive exponents $\rightarrow$ big numbers at least > 1
 
 \section{Units}\label{sec:AppendixUnits}
 
-\quote{Units of measurement give standards so that the numbers from our measurements refer to the same thing.} \autocite{SimpleWiki-UnitsOfMeasure}
+\quote{Units of measurement give standards so that the numbers from our measurements refer to the same thing.} \autocite{a2003_units}
 
 Pretend someone tells you that they have a new cousin.  You ask how old they are.  They say 5.  You might automatically assume that they mean \num{5}~\unit{\years} old.  What if they just got a new baby cousin, who is \qty{5}{months\ old}?
 
@@ -165,22 +165,45 @@ $\blue{P_2} = \blue{\qty{28}{atm}}$\tikzmark{given1_end}
 
 \subsubsection{Formula}
 
-\[\textcolor{Maroon}{\underbrace{\mystrut{6ex}\textcolor{orange}{\hspace{1.5cm}V_2}}_{\text{The "Find" variable} \atop \text{by itself on the left}}} \textcolor{black}{=} \textcolor{Maroon}{\underbrace{\textcolor{black}{\frac{\blue{P_1} \cdot \orange{V_1}}{\mystrut{4ex}\blue{P_2}}}}_{\text{All the variables} \atop \text{you are "Given"}}}\]\tikzmark{formula1_end} % use \atop to split lines in underbraces.
-\marginnote{\tikzmarknode{formula1_start}I pick a formula that has the thing we are asked to find on one side, and all of the other variables on the other.}[1cm]
+{ % Start of a local group
+	\def\stacktype{L} % Set stack to be a "long" stack
+	\setstackgap{L}{0.5cm} % Set the gap between stacked items
 
-\begin{tikzpicture}[overlay, remember picture]
-	\draw [->] ([xshift=-0.25cm]pic cs:formula1_start) -- ([xshift=9.75cm, yshift=0.5cm]pic cs:formula1_end);
-\end{tikzpicture}
+	% Math
+	\def\LHS{V_2}
+	\def\RHS{\frac{P_1 \cdot V_1}{P_2}}
 
+	% Text
+	\def\RHST{
+		\hspace*{4cm} % move the text to a better location (to the right)
+		\begin{array}{l}% c --> center aligned, r --> right aligned, l --> left aligned
+			\text{Your} \\ \text{"Given" a.k.a. "Known"} \\ \text{variables are on this side.}
+		\end{array}
+	}
+	\def\LHST{
+		\hspace*{-1cm} % move the text to a better location (to the left)
+		\begin{array}{r}% c --> center aligned
+			\text{The} \\ \text{"Find"} \\ \text{variable}
+		\end{array}
+	}
+
+	\[
+		\mathBrace{\LHS}{\LHST}= \mathBrace{\RHS}{\RHST}
+	\]
+} % End of the local group
 
 \subsubsection{Work}
 \begin{align*}
-	\orange{V_2} & = \frac{\blue{P_1} \cdot \orange{V_1}}{\blue{P_2}}                                                                                                                                                                                                         \\
+	\orange{V_2} & = \frac{\blue{P_1} \cdot \orange{V_1}}{\blue{P_2}}                                                                                                                                                                                                                                                         \\
 	\\
-	\orange{V_2} & = \frac{(\blue{\qty{10}{\Ccancel[red]{atm}}}) \cdot (\orange{\qty{2}{\milli\liter}})}{(\blue{\qty{28}{\Ccancel[red]{atm}}})}\marginnote{You can treat the units and numbers almost as two seperate things.  See \ref{sec:AppendixUnits} for more details.}
+	\orange{V_2} & = \frac{(\blue{\qty{10}{\Ccancel[red]{atm}}}) \cdot (\orange{\qty{2}{\milli\liter}})}{(\blue{\qty{28}{\Ccancel[red]{atm}}})}\marginnote{\tikzmarknode{units1_start}You can treat the units and numbers almost as two seperate things.  See \ref{sec:AppendixUnits} for more details.}\tikzmark{units1_end}
 	\\
-	\orange{V_2} & = \frac{(\orange{\qty{20}{\milli\liter}})}{(\qty{28})}                                                                                                                                                                                                     \\
+	\orange{V_2} & = \frac{(\orange{\qty{20}{\milli\liter}})}{(\qty{28})}                                                                                                                                                                                                                                                     \\
 \end{align*}
+
+\begin{tikzpicture}[overlay, remember picture]
+	\draw [->] ([xshift=-0.5cm]pic cs:units1_start) -- ([xshift=0.5cm, yshift=0cm]pic cs:units1_end);
+\end{tikzpicture}
 
 \subsubsection{Answer with units}
 \begin{align*}
@@ -188,6 +211,8 @@ $\blue{P_2} = \blue{\qty{28}{atm}}$\tikzmark{given1_end}
 \end{align*}
 
 \marginnote{0.71428571428 rounded to two decimal places.}[-2em]
+
+
 
 \end{document}
 
