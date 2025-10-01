@@ -58,7 +58,7 @@
 	\par\hspace*{-\@totalleftmargin}\parbox{\textwidth}{\strut #1\strut}\par}
 \makeatother
 
-\input{./sourced/customCommands/gradientArrows.tex}
+\input{../Preamble/customCommands/gradientArrows.tex}
 
 \newcommand{\Definition}[3]{
 	\unindent{
@@ -81,4 +81,9 @@
 		fill=#1,
 		inner sep=1pt,
 		minimum size=1.5em] (char) {\dracBg{#2}};
+}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{../figures/}{#2.pdf_tex}
 }

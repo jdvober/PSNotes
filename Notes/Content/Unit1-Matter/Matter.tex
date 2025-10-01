@@ -9,7 +9,7 @@
 \begin{outline}[enumerate]
     \1 \colorbox{dracPink}{Matter is the “stuff” that makes up everything in the universe.}
 
-    \Definition{Matter}{Anything that has mass and takes up space.}{\autocite{a2003_matter}}
+    \Definition{Matter}{Anything that has mass and takes up space.}{\autocite{matter}}
 
     \1 Properties of Matter
     \2 Each specific substance has its own combination of properties that can be used to identify the substance.
@@ -28,7 +28,7 @@
 
     \newpage
 
-    \Definition{Chemistry}{The science that studies what everything is made of and how it changes.}{\autocite{a2003_chemistry}}
+    \Definition{Chemistry}{The science that studies what everything is made of and how it changes.}{\autocite{chemistry}}
 
     \section{Kinds of Matter}
 
@@ -36,7 +36,7 @@
 
     \1 Elements
 
-    \Definition{Element}{A substance that is made up of only one type of atom.}{\autocite{a2003_chemical}}
+    \Definition{Element}{A substance that is made up of only one type of atom.}{\autocite{chemical_elements}}
 
     \2 If you break down an element any more, then it just becomes generic \emph{protons}, \emph{neutrons} and \emph{electrons}.
     \3 It stops behaving like that element
@@ -59,42 +59,140 @@
 
     \1 Compounds
 
-    \Definition{Compound}{A chemical compound is a substance made of two or more different elements joined together by chemical bonds in a fixed ratio.}{\autocite{a2004_chemical}}
+    \Definition{Compound}{A chemical compound is a substance made of two or more different elements joined together by chemical bonds in a fixed ratio.}{\autocite{chemical_compounds}}
 
 
-    \2 Ex: Carbon Dioxide ($CO_2$)\\
+    \begin{multicols}{2}
+        Ex: Carbon Dioxide ($CO_2$)\\
 
-    \vspace{1cm}
+        \chemfig{%
+            \circledatom{dracOrange}{O}=\circledatom{dracBg}{\dracFg{C}}=\circledatom{dracOrange}{O}
+        }
 
-    \chemfig{%
-        \circledatom{dracOrange}{O}-\circledatom{dracBg}{\dracFg{C}}-\circledatom{dracOrange}{O}
-    }
+        \columnbreak
 
-    \vspace{1cm}
-    \2 Ex: Water ($H_{2}O$)\\
+        Ex: Water ($H_{2}O$)\\
 
-    \chemfig{%
-        \circledatom{dracOrange}{O}%
-        (-[:-52.25]\circledatom{dracCyan}{H})%
-        (-[:232.25]\circledatom{dracCyan}{H})% 180+ 52.5 <-- lower left hydrogen
-    }
+        \chemfig{%
+            \circledatom{dracOrange}{O}%
+            (-[:-52.25]\circledatom{dracCyan}{H})%
+            (-[:232.25]\circledatom{dracCyan}{H})% 180+ 52.5 <-- lower left hydrogen
+        }
+    \end{multicols}
 
-    \Definition{Chemical Formula}{A combination of symbols that show the ratio of elements in a compound.}{\autocite{a2006_chemical}}
+    \Definition{Chemical Formula}{A combination of symbols that show the ratio of elements in a compound.}{\autocite{chemical_formula}}
 
-    \2 Examples
-    \- \(CO_2\)
+    \2 Examples\\
+
+    \begin{multicols}{2}
+
+        \begin{itemize}
+            \item \(C_{6}H_{12}O_{6}\)
+            \item \(NaCl\)
+            \item \(CH_{4}\)
+            \item \(CO_{2}\)
+            \item \(CaCO_3\)
+            \item \(Al(OH)_3\)
+        \end{itemize}
+    \end{multicols}
 
     \1 Mixtures
 
+    \Definition{Mixture}{A substance that is made up of two or more simpler substances. These substances can be chemical elements or compounds. A mixture can be made of liquids, solids, or gases.}{\autocite{mixture}}
+
+    \2 Ex: Well Water
+    \3 Well water is a mixture because it has minerals, salts, and even dissolved oxygen within it
+
+    \section{Changes in Matter}
+
+    \1 Physical Changes
+
+    \Definition{Physical Change}{A type of change in which the form of matter is altered but one substance is not transformed into another. The size or shape of matter may be changed, but no chemical reaction occurs. }{\autocite{physical_change}}
+
+    \begin{figure}[h] % [htbp] are placement options (here, top, bottom, page)
+        \centering % Centers the image and caption
+        \includegraphics[scale=0.25]{./Resources/Images/rippingPaper.png}
+        \caption{Ripping Paper} % The caption text
+        \label{fig:example_image} % Optional: label for referencing the figure
+    \end{figure}
+    \2 Before it is ripped, it is paper
+    \2 After it is ripped, it is still paper
+    \3 Thus, this is an example of a \emph{physical change.}
+    \2 Other examples
+    \3 Melting Ice
+    \3 Smashing a rock
+
+    \newpage
+
+    \1 Chemical Changes
+
+    \Definition{Chemical Change}{A chemical change, a.k.a. a chemical reaction is a change of materials into other materials with different properties. }{\autocite{chemical_change}}
+
+    \2 \highlight{Chemical changes occur when}
+    \3 \highlight{A substance combines with another to form a new substance.}
+
+    OR
+
+    \3 \highlight{Chemical decomposition into two or more different substances.}
+
+    \2 Examples
+    \begin{itemize}
+        \item Burning Wood
+        \item Iron Rusting
+        \item Mixing Baking Soda and Vinegar
+    \end{itemize}
+
+    \section{Measuring Matter}
+    \1 Mass
+    \1 Weight
+    \1 Volume
+    \1 Density
 \end{outline}
 
 \newpage
+
+\section{Matter Formulas}
+
 \begin{formulaBox}{Density}
     \showFormula{Density}{\center$density = \frac{mass}{volume}$}{\center\unitsDensity}
     \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
     \showFormula{Mass}{\center$mass = density \cdot volume$}{\center\unitsMass}
     \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
     \showFormula{Volume}{\center$volume = \frac{mass}{density}$}{\center\unitsVolume}
+\end{formulaBox}
+
+\begin{formulaBox}{Pressure}
+    \showFormula{Pressure}{\center$pressure = \frac{force}{area}$}{\center\unit{atm}}
+    \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Force}{\center$force = pressure \cdot area$}{\center\unit{\newton}}
+    \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Area}{\center$area = \frac{force}{pressure}$}{\center\unit{\centi\meter\squared} | \unit{\meter\squared}}
+\end{formulaBox}
+
+\subsection{Gas Laws}
+
+\begin{formulaBox}{Boyle's Law}
+    \showFormula{Pressure}{\center$pressure = \frac{force}{area}$}{\center\unit{atm}}
+    \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Force}{\center$force = pressure \cdot area$}{\center\unit{\newton}}
+    \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Area}{\center$area = \frac{force}{pressure}$}{\center\unit{\centi\meter\squared} | \unit{\meter\squared}}
+\end{formulaBox}
+
+\begin{formulaBox}{Charle's Law}
+    \showFormula{Pressure}{\center$pressure = \frac{force}{area}$}{\center\unit{atm}}
+    \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Force}{\center$force = pressure \cdot area$}{\center\unit{\newton}}
+    \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Area}{\center$area = \frac{force}{pressure}$}{\center\unit{\centi\meter\squared} | \unit{\meter\squared}}
+\end{formulaBox}
+
+\begin{formulaBox}{Gay-Lussac's Law}
+    \showFormula{Pressure}{\center$pressure = \frac{force}{area}$}{\center\unit{atm}}
+    \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Force}{\center$force = pressure \cdot area$}{\center\unit{\newton}}
+    \color{dracPurple}\rule{\textwidth}{1.5pt}\color{black}
+    \showFormula{Area}{\center$area = \frac{force}{pressure}$}{\center\unit{\centi\meter\squared} | \unit{\meter\squared}}
 \end{formulaBox}
 
 \end{document}

@@ -32,7 +32,14 @@
     % \rule{\textwidth}{0.3pt}
 ] % after-code
 
-\newcommand{\incfig}[2][1]{%
-    \def\svgwidth{#1\columnwidth}
-    \import{../figures/}{#2.pdf_tex}
-}
+
+\titleformat{\subsection} % command
+[display] % shape
+{\bfseries\itshape\parshape 1 -\itemindent \textwidth } % format
+{} % label
+{0.5ex} % sep
+{
+    \uuline
+} % before-code
+[
+] % after-code
