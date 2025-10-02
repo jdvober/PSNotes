@@ -1,3 +1,5 @@
+%NO SPACES IN NEWCOMMAND DEFINITIONS!
+
 % For determining custom spacing under underbrackets
 \newcommand*\mystrut[1]{\vrule width0pt height0pt depth#1\relax}
 %Ex:
@@ -10,14 +12,12 @@
 }
 
 \newcommand{\formuladef}[2]{
-
 	\textbf{$\text{Solving for} \atop \text{#1}$}
 	\[#2\]
 	%\columnbreak % Manually breaks the column to ensure content starts in the next column
 }
 
 \newenvironment{boxFormula}[3]{
-
 	\begin{formulaBox}{Formulas: #2} % Title
 		\begin{center}
 			\begin{multicols}{#1} % Specifies number of columns
@@ -43,14 +43,8 @@
 }
 
 % Custom Highlighting Command
-\newcommand{\highlight}[2][]{
-	\pgfkeys{/highlight/.cd}
-	\pgfkeys{
-		/highlight/color/.initial=dracPink,
-	}
-	\edef\highlightcolor{\pgfkeysvalueof{/highlight/color}}%
-
-	\colorbox{\highlightcolor}{#2}
+\newcommand{\highlight}[2][dracPink]{
+	\colorbox{#1}{#2}
 }
 
 % For full width items in an enumerate, outline setting etc.
@@ -84,6 +78,6 @@
 }
 
 \newcommand{\incfig}[2][1]{%
-    \def\svgwidth{#1\columnwidth}
-    \import{../figures/}{#2.pdf_tex}
+	\def\svgwidth{#1\columnwidth}
+	\import{../figures/}{#2.pdf_tex}
 }

@@ -1,7 +1,8 @@
-\documentclass{report}
+% This loads all of the preamble files.  It needs to be in the same directory as main tex file.
+\ProvidesPackage{mypreamble}
+
 \usepackage[letterpaper,left=0.5in,marginpar=1.5in, textwidth=6.75in]{geometry}
 \usepackage[utf8]{inputenc}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Colors
@@ -49,56 +50,5 @@
 %%%%%%%%%% MetaData %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{subfiles} % Best loaded last in the preamble
-\begin{document}
 
-\begin{titlepage}
-    \newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
-    \centering
-    \vspace*{1in} % Add some space from the top
-    \begin{Large}
-        \textbf{The Physical Science Tome of Infinite Wisdom}\\
-    \end{Large}
-    \vspace{1.5in} % Add more space
-    \begin{large}
-        \textbf{Mr. Vober}
-    \end{large}
-    \vfill % Push the following text to the bottom
-    Washington High School\\
-    \vspace{0.5in}
-\end{titlepage}
-
-% Main Body
-\begin{center}
-    \newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
-    \centering
-    \tableofcontents
-\end{center}
-
-
-%%%%%%%%%%
-% Content
-%%%%%%%%%%
-\addcontentsline{toc}{part}{Physical Science Topics}
-\subfile{./Content/Unit1-Matter/Matter.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Appendices
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{../Preamble/appendix.tex}
-\addcontentsline{toc}{part}{Appendices}
-\subfile{./Appendices/Appendix-TakingExcellentNotes/Appendix-TakingExcellentNotes.tex}
-\subfile{./Appendices/Appendix-CalculatingGrades/Appendix-CalculatingGrades.tex}
-\subfile{./Appendices/Appendix-MathInPhysicalScience/Appendix-MathInPhysicalScience.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% If you would like to include a Bibliography, uncomment these lines
-\begin{center}
-    \newgeometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
-    \centering
-    \printbibliography
-    \addcontentsline{toc}{chapter}{\textcolor{red}{Bibliography}}
-\end{center}
-
-\end{document}
+\endinput

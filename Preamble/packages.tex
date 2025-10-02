@@ -1,4 +1,3 @@
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography Package
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -8,42 +7,40 @@
 	backend=biber,
 	style=ieee,
 ]{biblatex}
-\addbibresource{sources.bib}
 \addbibresource{../Bibliography/sources.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{relsize}
 
 \usepackage{multirow} % allows combining multiple rows in tables
 \usepackage{multicol}
 
 \usepackage{lipsum} %Lorem Ipsum
 
-\usepackage{marginnote} % For notes in the margin
-\usepackage{stackengine} % Allows for stacking of math commands inside of math modes
-\stackMath % Use math mode inside stacking commands
-
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage[english]{babel}
-
-\usepackage{csquotes} % For block quotations
-\usepackage{graphicx}
-\usepackage{circuitikz}
-\usetikzlibrary{tikzmark, arrows.meta, positioning, shapes.arrows}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.8}
-\usepackage{pgfkeys}
-\graphicspath{ {../Resources/images/} }
-\usepackage[absolute]{textpos}
 \usepackage[colorlinks=true, linkcolor=dracBlue, urlcolor=dracBlue, citecolor=dracBlue]{hyperref}
+
 \usepackage{indentfirst} % indent the first line of a new paragraph automatically
+
 \usepackage{setspace}
 
 \usepackage{ulem} % Fancy underlines
 
-\usepackage{fancyhdr}% Fancy Headers and Footers
-\usepackage{lastpage}
+% \usepackage{outlines} % Outline environment
+% \usepackage{enumitem}
+\usepackage[sharp]{easylist} % Use # for lists
+% \ListProperties(key=value) sets the default style of lists from here on out.  To set back to default, use \NewList.  To resume a list, use #+ in the following list.
+\ListProperties(Progressive*=1em) % Indentation amount for sub-topics
+% \ListProperties(Space*=1.5em) % Sets a space between items of the same level.
 
-\usepackage{outlines} % Outline environment
-\usepackage{enumitem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math & Science
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Math
 \usepackage{amssymb}
@@ -55,13 +52,47 @@
 % Chemistry
 \usepackage{chemfig}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \usepackage{marginnote} % For notes in the margin
+% \renewcommand*{\marginfont}{\color{dracComment}\sffamily}
+\usepackage{sidenotesplus} % \sidenote|offset|<offsett>(custom mark)!colour!{content}.  Can be omitted, but must go in order.
+
+\usepackage{etoolbox}
+
+\usepackage{stackengine} % Allows for stacking of math commands inside of math modes
+\stackMath % Use math mode inside stacking commands
+
+\usepackage{csquotes} % For block quotations
+
+\usepackage[absolute]{textpos}
+
+\usepackage{fancyhdr}% Fancy Headers and Footers
+\usepackage{lastpage}
+
 \usepackage{markdown} % allows for md syntaxinside
+
+\usepackage[toc,page]{appendix} % Support for appendices
+
 \usepackage{pdfcomment}
 
-% Support for appendices
-\usepackage[toc,page]{appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Diagrams and Pictures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{graphicx}
+\usepackage{circuitikz}
+\usetikzlibrary{tikzmark, arrows.meta, positioning, shapes.arrows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+\usepackage{pgfkeys}
+\graphicspath{ {../Resources/images/} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Logic Control
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{multido}
 \usepackage{forarray}
 \usepackage{readarray}
